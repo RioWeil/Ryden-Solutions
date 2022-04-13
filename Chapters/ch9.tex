@@ -1,9 +1,75 @@
 \section[Nucleosynthesis and the Early Universe]{\hyperlink{toc}{Nucleosynthesis and the Early Universe}}
 
+\subsection{Mass fraction of Helium with faster decay}
+After the proton/neutron freezeout, the ratio of neutrons to protons is approximately:
+\begin{equation}
+    f_0 = \frac{n_{n, 0}}{n_{p, 0}} \approx \frac{1}{5}
+\end{equation}
+Suppose the time delay until nucleosynthesis is $t$. In this time delay, the neutrons decay to $\exp(-t/\tau_n)$ of their original amount, and the protons increase by the amount the neutrons decay (as the neutrons decay into a proton and electron). Therefore, the neutron-to-proton to ratio as a function of delay time is:
+\begin{equation}\label{ntop}
+    f(t) = \frac{n_n(t)}{n_p(t)} = \frac{n_{n, 0}\exp(-t/\tau_n)}{n_{p, 0} + n_{n, 0}(1 - \exp(-t/\tau_n))} = \frac{\frac{n_{n, 0}}{n_{p, 0}}\exp(-t/\tau_n)}{1 + \frac{n_{n, 0}}{n_{p, 0}}(1 - \exp(-t/\tau_n))} = \frac{f_0\exp(-t/\tau_n)}{1 + f_0(1 - \exp(-t/\tau_n))}
+\end{equation}
+The time delay from freezeout until nucleosynthesis is $200\si{s}$, and we suppose that the neutron decay time is reduced to $\tau_n = 88\si{s}$, so we can compute the fraction $f(200)$ at the time of nucleosynthesis to be:
+\begin{equation}
+    f(200) = 0.017
+\end{equation}
+If we assume that all available neutrons are incorporated into Helium, we get the maximal value for the primordial Helium fraction (as derived in problem 9.4) so:
+\begin{equation}
+    \boxed{Y_{\text{max}} = \frac{2f(200)}{1+f(200)} = 0.033}
+\end{equation}
+
+\subsection{Mass fraction of Helium with different rest energies}
+Note that technically, this new difference in the mass fraction would likely cause some difference in the binding energy of the deuteron. This would affect the temperature $T_{\text{nuc}}$ of nucleosynthesis, as:
+\begin{equation}
+    1 \approx 6.5\eta\left(\frac{kT_{\text{nuc}}}{m_n c^2}\right)^{3/2}\exp(\frac{B_{D}}{kT_{\text{nuc}}})
+\end{equation}
+and therefore the nucleosynthsis time $t_{\text{nuc}}$ would also change. For simplicity's sake, let us assume that $B_D$ remains unchanged. However, the difference in the mass energy \emph{will} affect the neutron-to-proton ratio at freezeout, where we find:
+\begin{equation}
+    f_0 = \frac{n_{n, 0}}{n_{p, 0}} = \exp(-\frac{Q_{n}}{kT_{\text{freeze}}})
+\end{equation}
+so with $Q_{n} = 0.129\si{MeV}$ instead of $1.29\si{MeV}$ and $kT_{\text{freeze}} = 0.8\si{MeV}$, we find:
+\begin{equation}
+    f_0 = 0.85.
+\end{equation}
+So, using \eqref{ntop} with $f_0 = 0.85$, $t = 200\si{s}$, $\tau_n = 880\si{s}$, we find:
+\begin{equation}
+    f(200) = 0.58
+\end{equation}
+therefore the maximum possible mass fraction is given by:
+\begin{equation}
+    \boxed{Y_{\text{max}} = \frac{2f(200)}{1 + f(200)} = 0.734}
+\end{equation}
+
+
 \subsection{}
-\subsection{}
-\subsection{}
-\subsection{}
+(To be appended after HW is due)
+
+\subsection{Maximum value for primordial Helium Fraction}
+By definition, we have:
+\begin{equation}\label{Ymaxdef}
+    Y_{\text{max}} = \frac{\rho_{\text{He}}}{\rho_{\text{b}}}
+\end{equation}
+Further, assuming that all neutrons are contained in Helium (as we want the maximal primordial Helium fraction), we have:
+\begin{equation}
+    \rho_{\text{He}} = 2\rho_{n}
+\end{equation}
+And the Baryonic density is given by:
+\begin{equation}
+    \rho_b = \rho_n + \rho_p
+\end{equation}
+Where:
+\begin{equation}
+    \rho_n = m_nn_n, \quad \rho_p = m_pn_p
+\end{equation}
+So substituting these into \eqref{Ymaxdef} we have:
+\begin{equation}
+    Y_{\text{max}} = \frac{2\rho_n}{\rho_n + \rho_p} = \frac{2\rho_n/\rho_p}{1 + \rho_n/\rho_p} = \frac{2\frac{n_n}{n_p}\frac{m_n}{m_p}}{1 + \frac{n_n}{n_p}\frac{m_n}{m_p}}
+\end{equation}
+Defining $f = \frac{n_n}{n_p}$ and making the approximation that $\frac{m_n}{m_p} \approx 1$, we conclude:
+\begin{equation}
+    \boxed{Y_{\text{max}} \approx \frac{2f}{1 + f}}
+\end{equation}
+
 \subsection{Neutrino Detection}
 The cross-section for the interaction of a neutrino with a proton or neutron is:
 \begin{equation}
