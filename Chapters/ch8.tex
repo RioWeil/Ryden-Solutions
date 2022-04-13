@@ -21,6 +21,29 @@ where $T$ is the temperature, $\eta$ is the baryon-to-photon ratio, and $Q$ is t
 
 Taking $T_{\text{rec}}$ to be when $X = 1/2$, for $\eta = 4 \times 10^{-10}$, we have $\boxed{T_{\text{rec}} = 3720\si{K}}$, and for $\eta = 8 \times 10^{-10}$, we have $\boxed{T_{\text{rec}} = 3784\si{K}}$. Doubling the photon-to-baryon ratio has a small effect (only a relative change of about $1.7\%$).
 
+\subsection{An ionizing photon per baryon}
+From Problem 2.5, we recall:
+\begin{equation}
+    \frac{n(hf > E_0)}{n_\gamma} \approx 0.42\left(\frac{E_0}{kT}\right)^2\exp(-\frac{E_0}{kT})
+\end{equation}
+So setting $n(hf > E_0) = n_{\text{bary}}$ to have 1 ionizing photon per baryon, and letting $E_0 = Q$, we find:
+\begin{equation}
+    \eta = \frac{n_{\text{bary}}}{n_{\gamma}} = \frac{n(hf > Q)}{n_\gamma} = 0.42\left(\frac{Q}{kT}\right)^2\exp(-\frac{Q}{kT})
+\end{equation}
+With $Q = 13.6\si{eV}$ and $\eta = 6.1 \times 10^{-10}$, we can numerically solve the above relation to find:
+\begin{equation}
+    \boxed{T = 5823\si{K}}
+\end{equation}
+which is larger than the recombination temperature.
+
 \subsection{}
-\subsection{}
-\subsection{}
+
+\subsection{Distances to Last Scattering}
+From Fig 5.9, we can see that at $z_{\text{ls}} = 1090$, the propert distance approaches its limiting value of $3.20c/H_0$, so:
+\begin{equation}
+    \boxed{d_{\text{p, ls}} = 3.20\frac{c}{H_0} = 14000\si{Mpc}}.
+\end{equation}
+Finding the luminosity distance is then just multiplying the above by a factor of $(1 + z_{\text{ls}})$:
+\begin{equation}
+    \boxed{d_{\text{L, ls}} = (1 + z_{\text{ls}})d_{\text{p, ls}} = 1091d_{\text{p, ls}} = 15274\si{Gpc}}.
+\end{equation}

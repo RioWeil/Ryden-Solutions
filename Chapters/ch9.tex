@@ -38,3 +38,50 @@ though of course this is approximate; really all the subatomic particles are clu
     \boxed{\lambda = \frac{1}{n\sigma_w} = 5.8 \times 10^{34}\si{m}}
 \end{equation}
 \emph{Extremely} large; neutrinos are very hard to detect!
+
+\subsection*{Optical Depth of Reionized Material (9.5 in first ed.)}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Optical Depth of Reionized Material (9.5 in first ed.)}
+\begin{tcolorbox}
+    We know from ovbservations that the intergalatic medium is currently ionized. Thus, at some point between $t_{\text{rec}}$ and $t_0$, the integalactic medium must have been reionized. In fact detailed measurements of the CMB on large scales place constraints on the amount of reionization (but that isn't important for this question). Assume that the baryonic component of the Universe instantaneously became completely reionized at some time $t_*$. For what value of $t_*$ does the optical depth of the reionized material:
+    \begin{equation}
+        \tau = \int_{t_*}^{t_0}\Gamma(t)\mathrm d t = \int_{t_*}^{t_0} n_e(t)\sigma_e c \mathrm d t
+    \end{equation}
+    equal one? For simplicity, assume that the Universe is spatially flat and matter-dominated, and that the baryonic component of the universe is pure hydrogen. To what redshift $z_*$ does this alue of $t_*$ correspond?
+\end{tcolorbox}
+\noindent
+As the baryon density scales as $\propto \frac{1}{a^3}$, we have that:
+\begin{equation}
+    n_{e}(t)\sigma_e c = \frac{n_{e, 0}\sigma_e c}{a^3}
+\end{equation}
+Assuming that the baryonic component of the universe is pure hydrogen and that the universe is charge neutral, we have:
+\begin{equation}
+    n_{e, 0} = n_{\text{bary}, 0}
+\end{equation}
+For a flat, matter-dominated universe, we have scale factor (Ryden 5.5):
+\begin{equation}
+    a(t) = \left(\frac{t}{t_0}\right)^{2/3}
+\end{equation}
+so we find:
+\begin{equation}
+    n_{e}(t)\sigma_e c = \frac{n_{\text{bary}, 0}\sigma_e c t_0^2}{t^2}
+\end{equation}
+so carrying out the integral we have:
+\begin{equation}
+    1 = \tau = \int_{t_0}^{t_*}\frac{n_{\text{bary}, 0}\sigma_e c t_0^2}{t^2} \mathrm d t = n_{\text{bary}, 0}\sigma_e c t_0^2\left(\frac{1}{t_0} - \frac{1}{t_*}\right)
+\end{equation}
+So rearranging for $t_*$ we have:
+\begin{equation}
+    t_* = \frac{1}{\frac{1}{t_0} - \frac{1}{n_{\text{bary}, 0}\sigma_ec t_0^2}}
+\end{equation}
+In a flat, matter-dominated universe, the age of the universe is given by:
+\begin{equation}
+    t_0 = \frac{2}{3H_0}
+\end{equation}
+so we obtain:
+\begin{equation}
+    t_* = \frac{1}{\frac{3H_0}{2} - \frac{9H_0^2}{4n_{\text{bary}, 0}\sigma_ec}}
+\end{equation}
+Therefore, taking $H_0 = 68 \si{km.s^{-1}.Mpc^{-1}}$, $n_{\text{bary}, 0} = 0.25\si{m^{-3}}$, $c = 3 \times 10^{8}\si{m.s^{-1}}$, and $\sigma_e = 6.65 \times 10^{-29}\si{m^2}$, we find:
+\begin{equation}
+    \boxed{t_* = 4.2 \times 10^{14}\si{s} = 13 \si{Myr}}
+\end{equation}
