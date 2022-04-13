@@ -36,8 +36,47 @@ With $Q = 13.6\si{eV}$ and $\eta = 6.1 \times 10^{-10}$, we can numerically solv
 \end{equation}
 which is larger than the recombination temperature.
 
-\subsection{}
-(To be appended after HW is due)
+\subsection{Completely Helium at Recombination}
+We start with Ryden Eq. 8.28:
+\begin{equation}
+    \frac{n_H}{n_pn_e} = \frac{g_H}{g_pg_E}\left(\frac{m_H}{m_p m_e}\right)^{3/2}\left(\frac{kT}{2\pi \hbar^2}\right)^{-3/2}\exp(\frac{[m_p + m_e - m_H]c^2}{kT}) =  \frac{g_H}{g_pg_E}\left(\frac{m_H}{m_p m_e}\right)^{3/2}\left(\frac{kT}{2\pi \hbar^2}\right)^{-3/2}\exp(\frac{Q_H}{kT})
+\end{equation}
+The analogous relation for the Helium atom is:
+\begin{equation}
+    \frac{n_{He}}{n_en_{He^+}} = \frac{g_{He}}{g_eg_{He^+}}\left(\frac{m_{He}}{m_e m_{He^+}}\right)^{3/2}\left(\frac{kT}{2\pi \hbar^2}\right)^{-3/2}\exp(\frac{Q_{He}}{kT})
+\end{equation}
+Using that the statistical factor is $g_{He}/g_eg_{He^+} = 1/4$ and that $m_{He} \sim m_{He^+} \sim 4m_p$, this becomes:
+\begin{equation}
+    \frac{n_{He}}{n_en_{He^+}} = \frac{1}{4}\left(\frac{m_e k T}{2\pi \hbar^2}\right)^{-3/2}\exp(\frac{Q_{He}}{kT})
+\end{equation}
+Defining $X = \frac{n_{He^+}}{n_{He^+} + n_{He}}$, we have that:
+\begin{equation}
+    n_{He} = \frac{1 - X}{X}n_{He^+}
+\end{equation}
+and from charge neutrality, $n_{He^+} = n_e$, so:
+\begin{equation}\label{temp83}
+    \frac{1 - X}{X} = n_{He^+}\frac{1}{4}\left(\frac{m_e kT}{2\pi \hbar^2}\right)^{-3/2}\exp(\frac{Q_{He}}{kT})
+\end{equation}
+If the Baryonic portion of the universe consists entirely of Helium-4 at the time of recombination, we then have that:
+\begin{equation}
+    \eta = \frac{4n_{He^+}}{X n_\gamma}
+\end{equation}
+Noting the $4$ as there are four baryons per Helium nucleus. Therefore using the blackbody number density of photons (Ryden Eq. 8.23):
+\begin{equation}
+    n_{He^+} = 0.2436\frac{X}{4}\eta\left(\frac{kT}{\hbar c}\right)^{3}
+\end{equation}
+And plugging this back into \eqref{temp83}, we have:
+\begin{equation}
+    \frac{1 - X}{X^2} = \frac{3.84}{16}\eta\left(\frac{kT}{m_e c^2}\right)^{3/2}\exp(\frac{Q_{He}}{kT})
+\end{equation}
+We now solve for the time of recombination. Setting $X = 1/2$, we have:
+\begin{equation}
+    2 = \frac{3.84}{16}\eta\left(\frac{kT_{\text{rec}}}{m_e c^2}\right)^{3/2}\exp(\frac{Q_{He}}{kT_{\text{rec}}})
+\end{equation}
+We now take $\eta = 6 \times 10^{-10}$ and $Q_{He} = 24.6\si{eV}$, and substitute in the standard values for the other constants. We can then umerically solve for $T_{\text{rec}}$ to get:
+\begin{equation}
+    \boxed{T_{\text{rec}} = 6490\si{K}}
+\end{equation}
 
 \subsection{Distances to Last Scattering}
 From Fig 5.9, we can see that at $z_{\text{ls}} = 1090$, the propert distance approaches its limiting value of $3.20c/H_0$, so:
