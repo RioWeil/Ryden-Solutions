@@ -1,6 +1,6 @@
 \section[Structure Formation: Gravitational Instability]{\hyperlink{toc}{Structure Formation: Gravitational Instability}}
 
-\subsection{Density Perturbations in a Flat, Matter-Dominated, Contracting Universe}
+\subsection{Density Fluctuations in a Flat, Matter-Dominated, Contracting Universe}
 We first note that:
 \begin{equation}
     H = \frac{\dot{a}}{a} < 0
@@ -9,7 +9,7 @@ in a contracting universe. Now, starting with Ryden Eq. 11.49, we have:
 \begin{equation}
     \ddot{\delta} + 2H\dot{\delta} - \frac{3}{2}\Omega_m H^2\delta = 0
 \end{equation}
-In a contracting matter dominated universe, $\Omega_m = 1$ and $H = -\frac{2}{3t}$ (note the negative sign for contraction!), so:
+In a contracting matter dominated universe, $\Omega_m = 1$ and $H = -\frac{2}{3t}$ (note the negative sign for contraction! This can be obtained from $a(t) = \left(\frac{t}{t_0}\right)^{2/3}$), so:
 \begin{equation}
     \ddot{\delta} - \frac{4}{3t}\dot{\delta} - \frac{2}{3t^2}\delta = 0
 \end{equation}
@@ -17,11 +17,11 @@ Guessing a power law $\delta(t) = t^r$, we find:
 \begin{equation}
     r(r-1)t^{r-2} - \frac{4}{3t}rt^{r-1} - \frac{2}{3t^2}t^r = 0
 \end{equation}
-Dividing both sides by $\frac{1}{t^{r-2}}$ we obtain a quadratic equation for $r$:
+Dividing both sides by $t^{r-2}$ we obtain a quadratic equation for $r$:
 \begin{equation}
     r^2 - \frac{7}{3}r - \frac{2}{3} = 0
 \end{equation}
-This has solutuons:
+Using the quadratic formula, we find the solutions:
 \begin{equation}
     r = \frac{7 \pm \sqrt{73}}{6}
 \end{equation}
@@ -33,8 +33,43 @@ Where $A, B$ are constants determined by initial conditions. The second term van
 \begin{equation}
     \boxed{\delta(t) \approx At^{\frac{7 + \sqrt{73}}{6}}}
 \end{equation}
-\subsection{}
-\subsection{}
+
+\subsection{Density Fluctuations in a Nearly Empty, Negatively Curved, Expanding Universe}
+We again start with Ryden Eq. 11.49:
+\begin{equation}
+    \ddot{\delta} + 2H\dot{\delta} - \frac{3}{2}\Omega_m H^2\delta = 0
+\end{equation}
+Since $\Omega_m \ll 1$, the last term can be neglected:
+\begin{equation}
+    \ddot{\delta} + 2H\dot{\delta} = 0
+\end{equation}
+In an empty expanding universe, we have $H = \frac{1}{t}$ (as $a(t) = \frac{t}{t_0}$) so:
+\begin{equation}
+    \ddot{\delta} + \frac{2}{t}\dot{\delta} = 0
+\end{equation}
+Again guessing a power law $\delta(t) = t^r$, we find:
+\begin{equation}
+    r(r-1)t^{r-2} + \frac{2}{t}rt^{r-1} = 0
+\end{equation}
+Dividing both sides by $t^{r-2}$ we obtain a quadratic equation for $r$:
+\begin{equation}
+    r^2 + r = 0
+\end{equation}
+This has solutions:
+\begin{equation}
+    r = 0, r = -1
+\end{equation}
+So we therefore find:
+\begin{equation}
+    \boxed{\delta(t) = At^0 + Bt^{-1}}
+\end{equation}
+At long times, the latter terms vanishes, so:
+\begin{equation}
+    \boxed{\delta(t) \approx A}.
+\end{equation}
+That is, at long times the fluctuations are constant.
+
+\subsection{Photon-Baryon Fluid}
 \subsection{}
 \subsection{}
 \subsection{}
