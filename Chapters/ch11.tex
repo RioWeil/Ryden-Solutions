@@ -74,4 +74,25 @@ That is, at long times the fluctuations are constant.
 
 \subsection{}
 
-\subsection{}
+\subsection{Mean Square Mass Fluctuation and Standard Deviation of Density Field}
+The standard deviation of the density field for a Gaussian field can be computed (in the case of a Gaussian field) as (Ryden Eq. 11.67):
+\begin{equation}
+    \sigma_\delta^2 = \frac{V}{2\pi}\int_0^\infty P(k)k^2 \mathrm dk = \frac{V}{2\pi}\int_0^{k_{max}} P(k)k^2 \mathrm dk
+\end{equation}
+Meanwhile the mean square mass fluctuation is computed as:
+\begin{equation}
+    \avg{\left(\frac{\delta M}{M}\right)^2} = \avg{\left(\frac{M  - \avg{M}}{\avg{M}}\right)^2} = \frac{V}{2\pi }\int_0^{\infty}P(k)\left[\frac{3j_1(kr)}{kr}\right]^2 k^2 \mathrm d k = \frac{V}{2\pi }\int_0^{k_{\text{max}}}P(k)\left[\frac{3j_1(kr)}{kr}\right]^2 k^2 \mathrm d k 
+\end{equation}
+So the claim is proven is we can show for $M < M_{\text{min}}$, or for $r < r_{\text{min}}$ that:
+\begin{equation}
+    \int_{0}^{k_{max}} P(k)k^2 \mathrm d k = \int_0^{k_{\text{max}}}P(k)\left[\frac{3j_1(kr)}{kr}\right]^2 k^2 \mathrm d k 
+\end{equation}
+Incoming is a handwavey argument that I don't actually think is the full answer. For $r < r_{\text{min}} = \frac{2\pi}{k_{\text{max}}}$, $kr$ will be small over the domain of integration so we may Taylor expand $j_1(kr)$. Doing so, we find:
+\begin{equation}
+    j_1(kr) = \frac{\sin(kr) - kr\cos(kr)}{(kr)^2} \approx \frac{(kr - \frac{(kr)^3}{6}) - kr\left(1 - \frac{(kr)^2}{2}\right)}{(kr)^2} = \frac{\frac{(kr)^3}{3}}{(kr)^2} = \frac{kr}{3}
+\end{equation}
+Therefore:
+\begin{equation}
+    \int_0^{k_{\text{max}}}P(k)\left[\frac{3j_1(kr)}{kr}\right]^2 k^2 \mathrm d k \approx  \int_0^{k_{\text{max}}}P(k)\left[\frac{3}{kr}\frac{kr}{3}\right]^2 k^2 \mathrm d k = \int_0^{k_{\text{max}}}P(k) k^2 \mathrm d k
+\end{equation}
+Which is exactly what we wished to show.
