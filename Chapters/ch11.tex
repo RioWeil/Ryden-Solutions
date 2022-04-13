@@ -1,6 +1,38 @@
 \section[Structure Formation: Gravitational Instability]{\hyperlink{toc}{Structure Formation: Gravitational Instability}}
 
-\subsection{}
+\subsection{Density Perturbations in a Flat, Matter-Dominated, Contracting Universe}
+We first note that:
+\begin{equation}
+    H = \frac{\dot{a}}{a} < 0
+\end{equation}
+in a contracting universe. Now, starting with Ryden Eq. 11.49, we have:
+\begin{equation}
+    \ddot{\delta} + 2H\dot{\delta} - \frac{3}{2}\Omega_m H^2\delta = 0
+\end{equation}
+In a contracting matter dominated universe, $\Omega_m = 1$ and $H = -\frac{2}{3t}$ (note the negative sign for contraction!), so:
+\begin{equation}
+    \ddot{\delta} - \frac{4}{3t}\dot{\delta} - \frac{2}{3t^2}\delta = 0
+\end{equation}
+Guessing a power law $\delta(t) = t^r$, we find:
+\begin{equation}
+    r(r-1)t^{r-2} - \frac{4}{3t}rt^{r-1} - \frac{2}{3t^2}t^r = 0
+\end{equation}
+Dividing both sides by $\frac{1}{t^{r-2}}$ we obtain a quadratic equation for $r$:
+\begin{equation}
+    r^2 - \frac{7}{3}r - \frac{2}{3} = 0
+\end{equation}
+This has solutuons:
+\begin{equation}
+    r = \frac{7 \pm \sqrt{73}}{6}
+\end{equation}
+So we therefore find:
+\begin{equation}
+    \boxed{\delta(t) = At^{\frac{7 + \sqrt{73}}{6}} + Bt^{\frac{7 - \sqrt{73}}{6}}}
+\end{equation}
+Where $A, B$ are constants determined by initial conditions. The second term vanishes for large $t$, so:
+\begin{equation}
+    \boxed{\delta(t) \approx At^{\frac{7 + \sqrt{73}}{6}}}
+\end{equation}
 \subsection{}
 \subsection{}
 \subsection{}
