@@ -1,0 +1,150 @@
+\section[Cosmic Dynamics]{\hyperlink{toc}{Cosmic Dynamics}}
+
+\subsection{Does the Cosmological Constant Affect Planetary Motion?}
+In a sphere of radius 1AU, we have:
+\begin{equation}
+    \boxed{E_{\Lambda} = \e_{\lambda}V = \e_{\lambda}\frac{4}{3}\pi R^3 = 5200 \si{MeV.m^{-3}} \frac{4}{3}\pi (1.5 \times 10^{11}\si{m})^3 = 1.18 \times 10^{25} \si{J}}
+\end{equation}
+Now calculating the rest energy of the sun, we have:
+\begin{equation}
+    \boxed{E_{\odot} = M_{\odot}c^2 = 1.99 \times 10^{30}\si{kg} (3.0 \times 10^{8}\si{ms^{-1}})^2 = 1.79 \times 10^{47}\si{J}}
+\end{equation}
+We see a difference of 23 orders of magnitude; we conclude that the cosmological constant does not have a significant effect on the motion of planets within the Solar system.
+
+\subsection{Perturbing Einstein's Static Universe}
+If $\Lambda = 4\pi G \rho$, then the acceleration equation says:
+\begin{equation}
+    \frac{\ddot{a}}{a} = -\frac{4\pi G}{3c^2}(\e + 3P) + \frac{\Lambda}{3} = -\frac{4\pi G\rho}{3} + \frac{4\pi G \rho}{4} = 0
+\end{equation}
+Where in the second equality we use that this hypothetical universe is filled solely with matter, so $P \approx 0$. Now, if some of this matter gets converted to radiation, we have that $P_{r} = \frac{1}{3}\e > 0$, so $P_{tot} > 0$ and hence:
+\begin{equation}
+    \frac{\ddot{a}}{a} = -\frac{4\pi G}{3c^2}(\e + 3P) + \frac{\Lambda}{3} = -\frac{4\pi G P_{tot}}{3} < 0
+\end{equation} 
+Note that while the pressure increases, the energy density $\e$ remains unchanged (the energy just converted form) so the energy density term and the cosmological constant term cancel out like before. From this, we conclude that $\ddot{a} < 0$, and so $\boxed{\text{the universe contracts}}$. The extra gravitational pressure from the radiation causes the universe to collapse; this shows that Einstein's static universe model isn't great, as even his universe with just one star would trigger a runaway collapse.
+
+\subsection{How Large is Einstein's Static Universe?}
+From Eq. 4.73 in Ryden, we have that in Einstein's static universe has radius of curvature:
+\begin{equation}
+    \boxed{R_0 = \frac{c}{2(\pi G \rho)^{1/2}} = 2  \times 10{26}\si{m} \sim 7 \si{Gpc}}
+\end{equation}
+If a photon were to circumnavigate this universe, it would take time:
+\begin{equation}
+    \boxed{T = \frac{2\pi R_0}{c} = 4 \times 10^{18}\si{s} \sim 132\si{Gyr}}
+\end{equation}
+Which is longer than the age of the universe!
+
+\subsection{Baseballs and Critical Density}
+The current critical density is given by Ryden Eq. 4.32 to be:
+\begin{equation}
+    \rho_{c, 0} = \frac{3}{8\pi G}H_0^2 = 8.7 \times 10^{-27}\si{kg.m^{-3}}
+\end{equation}
+We set the density of baseballs to be equal to the critical density:
+\begin{equation}
+    \rho_{c, 0} = \rho_{bb} = m_{bb}n_{bb}
+\end{equation}
+Where $n_{bb}$ is the number density of the baseballs. Rearranging, we get:
+\begin{equation}
+    \boxed{n_{bb} = \frac{\rho_{c, 0}}{m_{bb}} = \frac{8.7 \times 10^{-27}\si{kg.m^{-3}}}{0.145\si{kg}} = 6.0 \times 10^{-26} \si{m^{-3}}}
+\end{equation}
+Given this density of baseballs, we can use Ryden Eq. 2.2 to solve for the average distance we could see before having our line of sight intersected by a baseball:
+\begin{equation}
+    \boxed{\lambda = \frac{1}{n_{bb}\pi r_{bb}^2} = \frac{1}{(6.0 \times 10^{-26} \si{m^{-3}})\pi (0.0369\si{m})^2} = 3.90 \times 10^{27}\si{m} \approx 126000 \si{Mpc}}
+\end{equation}
+The fact that we can see galaxies at a distance $\sim c/H_0 \sim 4000\si{Mpc}$ does not give us a useful upper bound on the density of intergalatic baseballs in this case (we see that the line of sight from the current calculation assuming critical density of baseballs is $\sim$2 orders of magnitude larger than what we can actually see already). However, for completeness we calculate what upper bound this does give on the density of intergalatic baseballs:
+\begin{equation}
+    \boxed{n_{bb} < \frac{1}{\lambda \pi r_{bb}^2} = \frac{1}{(4000\si{Mpc})(\pi (0.0369\si{m})^2)} = 1.93 \times 10^{-24}\si{m^{-3}}}
+\end{equation}
+
+\subsection{Equation of State for Gases}
+The energy per-particle is given by:
+\begin{equation}
+    E = (mc^2 + h^2c^2/\lambda^2)^{1/2}
+\end{equation}
+And the total energy density of a gas of particles is given by:
+\begin{equation}
+    \e = nE
+\end{equation}
+Combining the two, we have:
+\begin{equation}\label{edensity}
+    \e = n(mc^2 + h^2c^2/\lambda^2)^{1/2}
+\end{equation}
+Since $n$ is the number density, we can write it as:
+\begin{equation}
+    n = \frac{N}{V} = \frac{N}{k_1 a^3}
+\end{equation}
+Where $N$ is the number of particles in the gas (we assume this does not change, i.e. that no particles are created or destroyed), and $V = k_1 a^3$ is the volume of the expanding universe (proportional to $a^3$). Furthermore, we can write $\lambda = k_2 a$ as the wavelength is linear in the scale factor. Putting this into \eqref{edensity} we have:
+\begin{equation}\label{edensitywitha}
+    \e = \frac{N}{k_1 a^3}(mc^2 + \frac{h^2c^2}{k_2^2 a^2})^{1/2}
+\end{equation}
+Now we recall the fluid equation:
+\begin{equation}
+    \dot{e} + 3\frac{\dot{a}}{a}(\e + P) = 0.
+\end{equation}
+Substituting the equation of state:
+\begin{equation}
+    P = w\e
+\end{equation}
+into the fluid equation, we have:
+\begin{equation}
+    \dot{\e} + 3\frac{\dot{a}}{a}\e(1 + w) = 0 
+\end{equation}
+Solving for $w$, we have:
+\begin{equation}\label{w}
+    w = \frac{-\dot{\e}}{3\frac{\dot{a}}{a}\e} - 1
+\end{equation}
+We will have to take the time derivative of \eqref{edensitywitha} to substitute into \eqref{w}. Noting that the only time-dependent parameter in $\e$ is $a$, we take the derivative (using the quotient rule and chain rule):
+\begin{equation}
+    \dot{\e} = \frac{\frac{N}{(mc^2 + \frac{h^2c^2}{k_2^2 a^2})^{1/2}}\left(-2\frac{h^2c^2}{k_2^2a^3}\right)\dot{a}k_1a^3 - 3Nk_1 a^2 \dot{a}(mc^2 + \frac{h^2c^2}{k_2^2 a^2})^{1/2}}{k_1^2 a^6}
+\end{equation}
+Simplifying slightly:
+\begin{equation}\label{dote}
+    \dot{\e} = \frac{-Nc^2\dot{a}(3k_2^2 m a^2 + 4h^2)}{k_1k_2^2a^6(mc^2 + \frac{h^2c^2}{k_2^2 a^2})^{1/2}}
+\end{equation}
+Substituting \eqref{edensitywitha} and \eqref{dote} into \eqref{w} we have:
+\begin{equation}
+    w = \frac{\frac{Nc^2\dot{a}(3k_2^2 m a^2 + 4h^2)}{k_1k_2^2a^6(mc^2 + \frac{h^2c^2}{k_2^2 a^2})^{1/2}}}{3\frac{\dot{a}}{a}\frac{N}{k_1 a^3}(mc^2 + \frac{h^2c^2}{k_2^2 a^2})^{1/2}} - 1
+\end{equation}
+Cancelling terms in the numerator and denominator, we have:
+\begin{equation}
+    w = \frac{c^2(3k_2^2 m a^2 + 4h^2)}{3k_2^2a^2(mc^2 + \frac{h^2c^2}{k_2^2 a^2})} - 1
+\end{equation}
+Expanding out terms in the numerator and denominator:
+\begin{equation}\label{wcomp}
+    w = \frac{3m c^2k_2^2a^2 + 4h^2c^2}{3mc^2k_2^2a^2 + 3h^2c^2} - 1
+\end{equation}
+In the highly relativistic limit, we have $a \to 0$ and $p \to 0$. Note that while $p$ does not appear explicitly in the above equation, $a\to 0$ implies $p \to \infty$ under the linear relationship of the scaling factor with $\lambda$, as $k_2 a = \lambda = h/p$. In any case, taking $a \to 0$ in the above expression, we have:
+\begin{equation}
+    \boxed{w_{\text{rel}} = lim_{a \to 0} w = \lim_{a \to w}\frac{3m c^2k_2^2a^2 + 4h^2c^2}{3mc^2k_2^2a^2 + 3h^2c^2} - 1 = \frac{4h^2c^2}{3h^2c^2} - 1 = \frac{4}{3} - 1 = \frac{1}{3}}
+\end{equation}
+This was precisely the claimed value. Now in the highly non-relativistic limit, we have $a \to \infty$ and $p \to 0$. We again take the limit of $a \to \infty$ in \eqref{wcomp} to obtain:
+\begin{equation}
+    \boxed{w_{\text{nonrel}} = \lim_{a \to \infty} w = \lim_{a \to \infty}\frac{3m c^2k_2^2a^2 + 4h^2c^2}{3mc^2k_2^2a^2 + 3h^2c^2} - 1 = \frac{3m c^2k_2^2}{3mc^2k_2^2} - 1 = 1 - 1 = 0}
+\end{equation}
+which is again the desired value.
+
+\subsection*{A Force-Based Derivation of the Newtonian Friedmann Equation}
+\addcontentsline{toc}{subsection}{\protect\numberline{}A Force-Based Derivation of the Newtonian Acceleration Equation}
+\begin{tcolorbox}
+    Now let's derive the ``acceleration equation'' (sometimes called ``Friedmann's other equation''!) for the whole Universe from simple Newtonian physica. Imagine a sphere of constant density $\rho(t)$ and radius $r$, with a test mass $m$ at its edge. Write down the equation of motion for the test mass under the gravitational pull of hte sphere. Now use the idea that the physical radius can be written as comoving radius times scale factor, i.e. $r \equiv a(t)x$. you should find that you can derive an equation for $a$ which doesn't depend on $x$ or on $m$! In other words, the sphere that oyu used inthe first place has dissapeared and your equation of motion has ended up being for the scale factor itself. [Note that you're \emph{not} being asked to solve this equation, just to derive it!]
+\end{tcolorbox}
+
+\noindent The mass of the sphere is given by:
+\begin{equation}\label{spheremass}
+    M(t) = \rho(t)V(t) = \rho(t)\frac{4}{3}\pi r(t)^3
+\end{equation}
+The distance from the center of the sphere to the test mass is just $r(t)$ (the test mass is on the surface), so using Newton's second law and Newton's law of universal gravitation, we have:
+\begin{equation}
+    m\ddot{r}(t) = F = \frac{-GM(t)m}{r(t)^2}
+\end{equation}
+Substituting $M(t)$ from \eqref{spheremass}, we have:
+\begin{equation}
+    m\ddot{r}(t) = \frac{-G\rho(t)\frac{4}{3}\pi r(t)^3m}{r(t)^2} = -G\rho(t)\frac{4}{3}\pi a(t) m
+\end{equation}
+Cancelling out $m$ from both sides and replacing $r(t)$ with $a(t)x$ we have:
+\begin{equation}
+    x\ddot{a}(t) = -G\rho(t)\frac{4}{3}\pi a(t) x
+\end{equation}
+The $x$s cancel on both sides, and dividing both sides by $a(t)$ we get:
+\begin{equation}
+    \boxed{\frac{\ddot{a}(t)}{a(t)} = -G\rho(t)\frac{4}{3}\pi}
+\end{equation}

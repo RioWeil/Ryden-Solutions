@@ -1,0 +1,330 @@
+\section[Measuring Cosmological Parameters]{\hyperlink{toc}{Measuring Cosmological Parameters}}
+
+\subsection{Magnitudes and Polar Bear Feet}
+First solving for the bolometric absolute magnitude of the bear's foot, we have:
+\begin{equation}
+    M_B = -2.5\log_{10}\left(\frac{L}{L_x}\right) = -2.5\log_{10}\left(\frac{10 \si{W}}{78.7 L_{\odot}}\right) = -2.5\log_{10}\left(\frac{10 \si{W}}{78.7 \cdot 3.82 \times 10^{26} \si{W}}\right) 
+\end{equation}
+Numerically, this is:
+\begin{equation}
+    \boxed{M_B = 68.7}
+\end{equation}
+Now for the apparent magnitude at luminosity distance of $d_L = 0.5\si{km}$. We first calculate the flux of the polar bear foot to be
+\begin{equation}
+    f_B \frac{L}{4\pi d_L^2} = \frac{10\si{W}}{4 \pi(500\si{m})^2} = 3.18 \times 10^{-6} \si{W m^{-2}}
+\end{equation}
+So therefore calculating the apparent magnitude, we have:
+\begin{equation}
+    m_B = -2.5\log_{10}\left(\frac{f_B}{f_x}\right) = -2.5\log_{10}\left(\frac{3.18 \times 10^{-6} \si{W m^{-2}}}{2.53 \times 10^{-8} \si{Wm^{-2}} }\right)
+\end{equation}
+Which numerically we calculate to be:
+\begin{equation}
+    \boxed{m_B = -5.25}
+\end{equation}
+If we have a bolometer that can detect the the bear's foot at a maximum luminosity distance of $d_L = 0.5\si{km}$, then $f_B$ (the flux of the bear foot at this distance) defines the maximum flux $f_{\text{max}}$ that is capable of being detected, so solving for the maximum luminosity distance it could detect the sun, we have:
+\begin{equation}
+    \boxed{d_{\text{max, sun}} = \sqrt{\frac{L_\odot}{4\pi f_{\text{max}}}} = 3.09 \times 10^{15}\si{m}}
+\end{equation}
+Repeating this calculation for the supernova, we have:
+\begin{equation}
+    \boxed{d_{\text{max, supernova}} = \sqrt{\frac{L_{\text{supernova}}}{4\pi f_{\text{max}}}} = \sqrt{\frac{4 \times 10^9 L_\odot}{4\pi f_{\text{max}}}} = 1.96 \times 10^{20}\si{m}}
+\end{equation}
+
+
+\subsection{Angular Size and Polar Bear Feet}
+We know that:
+\begin{equation}
+    d_A = \frac{l}{\delta \theta}
+\end{equation}
+so given $l = 0.16\si{m}$ and $d_A = 0.5\si{km}$, we can rearrange to solve for the angular size to be:
+\begin{equation}
+    \boxed{\delta \theta = \frac{l}{d_A} = \frac{0.16\si{m}}{500\si{m}} = 3.2 \times 10^{-4}\si{rad}}
+\end{equation}
+The critical redshift of the benchmark model is $z_C = 1.6$, where $d_{A, \text{max}} = 5.31 \times 10^{25}\si{m}$, so:
+\begin{equation}
+    \boxed{\delta \theta_{\text{max}} = \frac{l}{d_{A, \text{max}}} = 3 \times 10^{-27}\si{rad}}
+\end{equation}
+
+
+\subsection{Maximizing $d_A$ in a flat, single-component universe}
+In a spatially flat, single-component universe, the scale factor is given as (Ryden Eq. 5.39):
+\begin{equation}
+    a(t) = \left(\frac{t}{t_0}\right)^{2/(3 + 3w)}
+\end{equation}
+So we can integrate to obtain the proper distance (Ryden Eq. 5.49):
+\begin{equation}\label{dpt063int}
+    d_p(t_0) = c\int_{t_e}^{t_0}\frac{dt}{a(t)} = c\int_{t_e}^{t_0}\left(\frac{t}{t_0}\right)^{-2/(3 + 3w)}dt = ct_0\frac{3(1 + w)}{1 + 3w}\left[1 - (t_e/t_0)^{(1+3w)/(3+3w)}\right]
+\end{equation}
+Furthermore, using that $1 + z = \frac{a(t_0)}{a(t_e)} = (t_0/t_e)^{2/(3+3w)}$ (Ryden Eq. 5.47) to find $t_e$, we obtain (Ryden Eq. 5.48):
+\begin{equation}
+    t_e = \frac{t_0}{(1+z)^{(3+3w)/2}} = \frac{2}{3(1+w)H_0}\frac{1}{(1+z)^{3(1+w)/2}}
+\end{equation}
+Substituting this into \eqref{dpt0int} we find the current proper distance in terms of $z$:
+\begin{equation}
+    \boxed{d_p(t_0) = \frac{c}{H_0}\frac{2}{1+3w}\left[1 - (1+z)^{-(1+3w)/2}\right]}
+\end{equation}
+Further, in the case of a spatially flat universe, we can use Ryden Eq. 6.37 to obtain the current angular and luminosity distances:
+\begin{equation}\label{da63}
+    \boxed{d_A(t_0) = \frac{d_p(t_0)}{1+z} =  \frac{c}{H_0}\frac{2}{1+3w}\left[1 - (1+z)^{-(1+3w)/2}\right]\frac{1}{1+z}}
+\end{equation}
+\begin{equation}
+    \boxed{d_L(t_0) = d_p(t_0)(1+z) = \frac{c}{H_0}\frac{2}{1+3w}\left[1 - (1+z)^{-(1+3w)/2}\right](1+z)}
+\end{equation}
+To solve for the critical redshift $z_C$ where $d_A$ has the maximum value, we take the derivative of \eqref{da63} with respect to $z$ and set it to 0:
+\begin{equation}
+    \dod{d_A}{z} =  \frac{c}{H_0}\frac{2}{1+3w}\left(-(1+z)^{-2} + \frac{3+3w}{2}(1+z)^{-(5+3w)/2}\right) = 0
+\end{equation}
+The terms in the brackets must vanish, so:
+\begin{equation}
+    -(1+z)^{-2} + \frac{3+3w}{2}(1+z)^{-(5+3w)/2} = 0
+\end{equation}
+Cancelling out a factor of $(1+z)^{-2}$, we get:
+\begin{equation}
+    \frac{3+3w}{2}(1+z)^{-(1+3w)/2} = 1
+\end{equation}
+Now rearranging to solve for $z_c$, we find:
+\begin{equation}
+    \boxed{z_c = \left(\frac{2}{3+3w}\right)^{(1+3w)/2} - 1}
+\end{equation}
+We can now substitute this back into \eqref{da63} to find what the maximum redshift is:
+\begin{multline}
+    d_{A, \text{max}} =  \frac{c}{H_0}\frac{2}{1+3w}\left[1 - (1+z_c)^{-(1+3w)/2}\right]\frac{1}{1+z_c}
+    \\ = \frac{c}{H_0}\frac{2}{1+3w}\left[1 - \left(\left(\frac{2}{3+3w}\right)^{(1+3w)/2}\right)^{-(1+3w)/2}\right]\left(\frac{2}{3+3w}\right)^{-(1+3w)/2}
+\end{multline}
+So we conclude:
+\begin{equation}
+    \boxed{d_{A, \text{max}} = \frac{c}{H_0}\frac{2}{1+3w}\left[1 - \left(\frac{2}{3+3w}\right)^{-(1+3w)^2/4}\right]\left(\frac{2}{3+3w}\right)^{-(1+3w)/2}}
+\end{equation}
+
+\subsection{Difference between relative and absolute magnitude}
+At small redshift ($z \ll 1$), the luminosity distance is approximately (Ryden Eq. 6.50, also seen in class):
+\begin{equation}
+    d_L \approx \frac{c}{H_0}z\left(1 + \frac{1 - q_0}{2}z\right).
+\end{equation}
+By Ryden Eq 6.49, the distance modulus is given by:
+\begin{equation}
+    m - M = 5\log_{10}\left(\frac{d_L}{1\si{Mpc}}\right) + 25.
+\end{equation}
+Substituting the first equation into the second, we get:
+\begin{equation}
+    m - M \approx 5\log_{10}\left(\frac{\frac{c}{H_0}z\left(1 + \frac{1 - q_0}{2}z\right)}{1\si{Mpc}}\right) +  25
+\end{equation}
+From here on out, we will supress the $1\si{Mpc}$ in the denominator for clarity:
+\begin{equation}
+    m - M \approx 5\log_{10}\left(\frac{c}{H_0}z\left(1 + \frac{1 - q_0}{2}z\right)\right) +  25
+\end{equation}
+Using that $\log(ab) = \log(a) + \log(b)$ we get:
+\begin{equation}
+    m - M \approx 5\log_{10}\left(\frac{c}{H_0}z\right) + 5\log_{10}\left(1 + \frac{1 - q_0}{2}z\right) +  25
+\end{equation}
+Using the approximation $\log_{10}(1 + x) \approx 0.4343\ln(1 + x) \approx 0.4343x$ for small $x$ on the second term, we get:
+\begin{equation}
+    m - M \approx 5\log_{10}\left(\frac{c}{H_0}z\right) + 5(0.4343)(\frac{1 - q_0}{2}z) +  25 
+\end{equation}
+Simplifying the numerical terms in the second term, and multiplying by one in the argument of the first term, we get:
+\begin{equation}
+    m - M \approx 5\log_{10}\left(\frac{c}{H_0}z \frac{68 \si{km.s^{-1}.Mpc^{-1}}}{68 \si{km.s^{-1}.Mpc^{-1}}}\right) + 1.086(1-q_0)z +  25 
+\end{equation}
+Further application of the $\log(ab) = \log(a) + \log(b)$ rule yields:
+\begin{equation}
+    m - M \approx 5\log_{10}\left(\frac{c}{68 \si{km.s^{-1}.Mpc^{-1}}}\right) + 5\log_{10}z + 5\log_{10}\left(\frac{68 \si{km.s^{-1}.Mpc^{-1}}}{H_0}\right) + 1.086(1-q_0)z +  25
+\end{equation}
+Applying the $\log(\frac{1}{x}) = -\log(x)$ rule we get:
+\begin{equation}
+    m - M \approx 5\log_{10}\left(\frac{c}{68 \si{km.s^{-1}.Mpc^{-1}}}\right) + 5\log_{10}z - 5\log_{10}\left(\frac{H_0}{68 \si{km.s^{-1}.Mpc^{-1}}}\right) + 1.086(1-q_0)z +  25
+\end{equation}
+Before we evaluate the first term numerically, we recall the supressed $\si{Mpc}$, so:
+\begin{equation}
+    m - M \approx 5\log_{10}\left(\frac{300000\si{km.s^{-1}}}{68 \si{km.s^{-1}}}\right) + 5\log_{10}z - 5\log_{10}\left(\frac{H_0}{68 \si{km.s^{-1}.Mpc^{-1}}}\right) + 1.086(1-q_0)z +  25
+\end{equation}
+We use a calculator to check the value of the first term:
+\begin{equation}
+    m - M \approx 5(3.6446) + 5\log_{10}z - 5\log_{10}\left(\frac{H_0}{68 \si{km.s^{-1}.Mpc^{-1}}}\right) + 1.086(1-q_0)z +  25
+\end{equation}
+Grouping the numerical terms:
+\begin{equation}
+    \boxed{m - M \approx 43.23 - 5\log_{10}\left(\frac{H_0}{68 \si{km.s^{-1}.Mpc^{-1}}}\right) + 5\log_{10}z + 1.086(1-q_0)z}.
+\end{equation}
+
+\subsection{Surface Brightness}
+First, we recall the angular diameter distance $d_A$ to a standard yardstick to be (Ryden Eq. 6.35):
+\begin{equation}
+    d_A \equiv \frac{l}{\delta \theta} = \frac{S_\kappa(r)}{1 + z}
+\end{equation}
+Rearranging, we find:
+\begin{equation}
+    \delta \theta = \frac{l(1 + z)}{S_\kappa(r)}
+\end{equation}
+The observed flux is related to the luminosity $L$ and the observed flux $f$ as (Ryden 6.27):
+\begin{equation}
+    f = \frac{L}{4\pi S_\kappa(r)^2 (1+z)^2}
+\end{equation}
+So, $\Sigma$ as a function of redshift is:
+\begin{equation}
+    \Sigma \propto \frac{f}{(\delta \theta)^2} = \frac{\frac{L}{4\pi S_\kappa(r)^2 (1+z)^2}}{\left(\frac{l(1 + z)}{S_\kappa(r)}\right)^2} = \frac{L}{l^2 4\pi} \frac{1}{(1+z)^4} \propto \frac{1}{(1+z)^4}
+\end{equation}
+So:
+\begin{equation}
+    \boxed{\Sigma = \frac{\Sigma_0}{(1+ z)^4}}
+\end{equation}
+for some constant $\Sigma_0$. Since the surface brightness $\Sigma$ only depends on the redshift and not cosmological parameters, $\boxed{\text{we cannot use it to measure a cosmological parameter $q_0$}}$.
+
+\subsection{Quasar Light Flux}
+The variation time scale at the time light was emitted is related to the variation timescale when it was observed via:
+\begin{equation}
+    \delta t_0 = (1 + z)\delta t_e
+\end{equation}
+So for redshift $z = 5.0$ and $\delta t_0$ of 3 days, the variation time scale when emitted is:
+\begin{equation}
+    \boxed{\delta t_e = 0.5 \si{days}}
+\end{equation}
+$R_{\text{max}}$ for the observed quasar is:
+\begin{equation}
+    \boxed{R_{\text{max}} = c(\delta t_e) = 6.48 \times 10^12 \si{m}}
+\end{equation}
+From Ryden Figure 6.4, a standard yardstick with redshift $z = 5.0$ has angular distance $d_A \approx 0.3c/H_0$ in the Benchmark model, so the angular size is given by:
+\begin{equation}
+    \boxed{\delta \theta = \frac{R_{\text{max}}}{d_A} = \frac{6.48 \times 10^{12} \si{m}}{0.3c/H_0} = 1.58 \times 10^{-44}\si{rad}}
+\end{equation}
+
+
+\subsection{Proper Area of a sphere}
+The FRW metric (Ryden Eq. 6.22) is:
+\begin{equation}
+    ds^2 = -c^2dt^2 + a(t)^2[dr^2 + S_k(r)^2d\Omega^2]
+\end{equation}
+Expanding out $d\Omega$, this becomes:
+\begin{equation}
+    ds^2 = -c^2dt^2 + a(t)^2[dr^2 + S_k(r)^2d\theta^2 + S_\kappa(r)^2\sin^2\theta d\phi^2]
+\end{equation}
+For a space described by this metric, a surface element $dA$ on a sphere of radius $r$ will be given by:
+\begin{equation}
+    dA = (S_\kappa(r)d\theta)(S_\kappa(r)\sin\theta d\phi) = S_\kappa(r)^2 \sin\theta d\theta d\phi
+\end{equation}
+Integrating this surface area to find the surface area of this sphere, we have:
+\begin{equation}
+    A = \iint dA = \iint S_\kappa(r)^2 \sin\theta d\theta d\phi = S_\kappa(r)^2 \int_{0}^{\pi}\sin\theta d\theta \int_{0}^{2\pi}d\phi = S_\kappa(r)^2(2)(2\pi) = 4\pi S_\kappa(r)^2
+\end{equation}
+Therefore setting $r$ to be the proper radius $r = d_p(t_0)$, we obtain:
+\begin{equation}
+    \boxed{A_p(t_0) = 4\pi S_\kappa(r)^2}.
+\end{equation}
+
+\subsection{Total Intensity of Standard Candles}
+The relation between the observed flux $f$ and the Luminosity $L$ of a distant light source is given by:
+\begin{equation}
+    f = \frac{L}{4\pi S_\kappa(r)^2(1+z)^2}
+\end{equation}
+Since we live in a flat universe, $S_\kappa(r) = r$ and so:
+\begin{equation}\label{flux68}
+    f = \frac{L}{4\pi r^2(1+z)^2}
+\end{equation}
+In a single-component universe, the proper distance $r = d_p(t_0)$ for $w \neq -1/3$ is given by (Ryden Eq 5.50):
+\begin{equation}
+    r = d_p(t_0) = \frac{c}{H_0}\frac{2}{1+3w}\left[1 - (1+z)^{-(1+3w)/2}\right]
+\end{equation}
+So subsituting this into \eqref{flux68} we have:
+\begin{equation}
+    f(z) = \frac{L}{4\pi \left(\frac{c}{H_0}\frac{2}{1+3w}\left[1 - (1+z)^{-(1+3w)/2}\right]\right)^2(1+z)^2}
+\end{equation}
+Which we can rewrite as:
+\begin{equation}
+    \boxed{f(z) = \frac{L(1+3w)^2}{16\pi(c/H_0)^2}\frac{1}{(1+z)^2}\left[1 - (1+z)^{-(1+3w)/2}\right]^{-2}}
+\end{equation}
+which was the desired expression. When $w = -1/3$, the scale factor in a spatially flat, single component universe is given by:
+\begin{equation}
+    a(t) = \left(\frac{t}{t_0}\right)^{2/(3+3w)} = \left(\frac{t}{t_0}\right)^{2/(3-1)} = \frac{t}{t_0}
+\end{equation}
+Therefore, the Hubble constant is given by:
+\begin{equation}
+    H_0 = \left.\frac{\dot{a}}{a}\right|_{t = t_0} = \frac{\frac{1}{t_0}}{\frac{t_0}{t_0}} = \frac{1}{t_0}
+\end{equation}
+The redshift is given by:
+\begin{equation}
+    1 + z = \left(\frac{t_0}{t_e}\right)^{2/(3+3w)} = \frac{t_0}{t_e}
+\end{equation}
+Solving for the proper distance $r = d_p(t_0)$ in this universe, we have:
+\begin{equation}
+    r = d_p(t_0) = c\int_{t_e}^{t_0}\frac{\mathrm d t}{a(t)} = ct_0\int_{t_e}^{t_0} \frac{\mathrm d t}{t} = ct_0\ln(\frac{t_0}{t_e}) = \frac{c}{H_0}\ln(1+z)
+\end{equation}
+Therefore the observed flux in this universe is given by:
+\begin{equation}\label{wneg13}
+    \boxed{f(z) = \frac{L}{4\pi(c/H_0)^2\ln^2(1+z)}\frac{1}{(1+z)^2}}
+\end{equation}
+The number of stars located in the range $r$ to $r + \mathrm d r$ in the sky per steradian will be given by:
+\begin{equation}
+    N(r) = n_0 r^2 dr
+\end{equation}
+So the number of stars in the range $z$ to $z + \mathrm d z$ per steradian is given by:
+\begin{equation}
+    N(z) = n_0 r^2 \dod{}{z}\left(\frac{c}{H_0}\frac{2}{1+3w}\left[1 - (1+z)^{-(1+3w)/2}\right]\right)
+\end{equation}
+Taking the derivative:
+\begin{equation}
+    N(z) =  n_0 r^2 \left(\frac{c}{H_0}(1+z)^{-(3 + 3w)/2}\right)\mathrm d z
+\end{equation}
+So, finding the intensity from standard candles in the range $z$ to $z + \mathrm d z$, we multiply the earlier result for $f(z)$ with the above result for $N(z)$:
+\begin{equation}
+    \mathrm d J(z) = f(z)N(z) = \frac{L}{4\pi r^2(1+z)^2} n_0 r^2\left(\frac{c}{H_0}(1+z)^{-(3 + 3w)/2}\right)\mathrm d z
+\end{equation}
+Which after cancelling terms:
+\begin{equation}
+    \boxed{\mathrm d J(z) = \frac{n_0L(c/H_0)}{4\pi}(1+z)^{-(7+3w)/2}\mathrm d z}
+\end{equation}
+which is the desired result. To find the total intensity $J$, we integrate over all redshifts:
+\begin{equation}
+    J = \int_0^\infty \mathrm d J(z) = \int_0^\infty  \frac{n_0L(c/H_0)}{4\pi}(1+z)^{-(7+3w)/2}\mathrm d z =   \left.\frac{n_0L(c/H_0)}{4\pi}\frac{-(1 + 3w)}{2}(1+z)^{-(1+3w)/2}\right|_0^\infty
+\end{equation}
+This gives us the result:
+\begin{equation}
+    J = \begin{cases}
+        \frac{n_0 L(c/H_0)}{4\pi}\frac{1 + 3w}{2} & w > -\frac{1}{3}
+        \\ \infty & w < -\frac{1}{3}
+    \end{cases}
+\end{equation}
+To obtain the $w = -\frac{1}{3}$ result, we would have to repeat the analysis using \eqref{wneg13}, but we leave this as an exercise.
+
+The result above tells us that the total intensity we have in a universe with $w \leq -\frac{1}{3}$ is infinite! On some level this makes sense, as the horizon distance is infinite. However, in this universe, we claim the apparently paradoxical result that the brightness of the night sky is still finite. Why? Because the above calculation assumes that we see light flux from every single standard candle in the universe; this is simply NOT the case. There will be standard candles that block the sight of other standard candles to ours, so we simply do not see the light from every light source in the universe (and hence the above result is actually misleading, as it does not take into account the fact that light sources block other light sources). The maximum possible brightness we could have is if stars paved the sky (i.e. every sightline was blocked eventually by a star). In this scenario, we can repeat the calculation as done in Chapter 2 of Ryden. If a standard candle of radius $R_*$ is at a distance $r \gg R_*$, its angular area in steradians is given by:
+\begin{equation}
+    \Omega = \frac{\pi R_*^2}{4\pi r^2 (1+z)^2} = \frac{R_*^2}{4r^2(1+z)^2}
+\end{equation}
+and its measured flux will be:
+\begin{equation}
+    f = \frac{L_*}{4\pi r^2(1+z)^2}
+\end{equation}
+so the surface brightness of the star, in watts per square meter is:
+\begin{equation}
+    \Sigma_* = \frac{f}{\Omega} = \frac{L_*}{\pi R_*^2}
+\end{equation}
+which also gives the surface brightness of the paved sky, which while large, is most certainly finite!
+
+\subsection{Expansion Switch}
+The acceleration equation can be written as:
+\begin{equation}
+    -\frac{\ddot{a}}{aH^2} = \frac{1}{2}\sum_{i=1}^N \Omega_i(1+3w_i)
+\end{equation}
+where the sum is taken over the different components of the universe. In the Benchmark model, we have matter $(w = 0)$, radiation $(w = \frac{1}{3})$, and the cosmological constant $(w = -1)$, and so:
+\begin{equation}
+    -\frac{\ddot{a}}{aH^2} = \frac{1}{2}\Omega_m + \Omega_r - \Omega_\Lambda
+\end{equation}
+We have that $\Omega_m = \frac{\Omega_{m, 0}}{a^3}, \Omega_r = \frac{\Omega_{r, 0}}{a^4}$, and $\Omega_\Lambda = \Omega_{\Lambda, 0}$, so:
+\begin{equation}
+    -\frac{\ddot{a}}{aH^2} = \frac{1}{2}\frac{\Omega_{m, 0}}{a^3} + \frac{\Omega_{r, 0}}{a^4} - \Omega_{\Lambda, 0}
+\end{equation}
+Setting $\ddot{a}$ to find the scale factor $a$ for which the expansion of the universe switched from slowing down to speeding up, we have:
+\begin{equation}
+    0 =  \frac{1}{2}\frac{\Omega_{m, 0}}{a^3} + \frac{\Omega_{r, 0}}{a^4} - \Omega_{\Lambda, 0}
+\end{equation}
+Multiplying by $a^4$ we get:
+\begin{equation}
+    0 = \frac{1}{2}\Omega_{m, 0}a + \Omega_{r, 0} - \Omega_{\Lambda, 0}a^4
+\end{equation}
+In the Benchmark model, $\Omega_{m, 0} = 0.31, \Omega_{r, 0} = 9.0 \times 10^{-5}$, and $\Omega_{\Lambda, 0} \approx 0.69$. The radiation term can be neglected to good approximation, yielding:
+\begin{equation}
+    0 \approx a(\frac{1}{2}\Omega_{m, 0} - \Omega_{\Lambda, 0}a^3)
+\end{equation}
+So solving for the positive root of this equation, we get:
+\begin{equation}
+    \boxed{a = \sqrt[3]{\frac{\Omega_{m, 0}}{2\Omega_{\Lambda, 0}}} \approx 0.608}
+\end{equation}
+Which we note is $\boxed{\text{less}}$ than the scale factor at matter-lambda equality of $a_{m\Lambda} = 0.77$. 

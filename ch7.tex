@@ -1,0 +1,150 @@
+\section[Dark Matter]{\hyperlink{toc}{Dark Matter}}
+
+\subsection{Dark Matter Candidates}
+\textbf{THIS IS RIGHT, JUST FIX THE NUMBERS LATER}
+
+\textbf{Also, you can use:}
+\begin{equation}
+    \frac{4}{3}\pi d^3 = \frac{4}{3}\pi R^3 \frac{m_{\text{BH}}}{m_{\text{gal}}}
+\end{equation}
+
+Taking the radius of the halo to be $R_{\text{halo}} \approx 75 \si{kpc}$ and the mass of our galaxy to be $M_{\text{gal}} \approx 9.6 \times 10^{11} M_\odot$, we approximate that roughly all of the mass comes from dark matter, hence giving us $N = M_{\text{gal}}/10^{-8}M_\odot = 9.6 \times 10^{19}$ black holes. The volume of our galaxy is given by:
+\begin{equation}
+    V = \frac{4}{3}\pi R_{\text{halo}}^3 = 5.2 \times 10^{64}\si{m^3}
+\end{equation}
+The number density of these black holes in our galaxy is therefore given by:
+\begin{equation}
+    n_{\text{BH}} = \frac{N}{V} = \frac{9.6 \times 10^{19}}{5.2 \times 10^{61}\si{m^3}} \approx 1.85 \times 10^{-41} \si{m^{-3}}
+\end{equation}
+In other words, we can find one black hole per:
+\begin{equation}
+    V_{\text{BH}} = \frac{1}{n_{BH}} = 5.42 \times 10^{40}\si{m^3}
+\end{equation}
+So the nearest black hole would (approximately) be a distance of:
+\begin{equation}
+    \boxed{d_{\text{BH}} \approx \sqrt[3]{V_{BH}} = 3.78 \times 10^{13}\si{m}}
+\end{equation}
+away. The mean free path before a black hole comes into a distance $1 \si{AU}$ with our sun is given by:
+\begin{equation}
+    \lambda_{\text{BH}} = \frac{1}{n_{BH}\sigma} = \frac{1}{n_{BH}\pi (1 \si{AU})^2} = 7.67 \times 10^{17}\si{m}
+\end{equation}
+So combining this with the solar galactic orbital speed of $235 \si{km.s^{-1}}$, we find that the frequency of such black hole pass-bys are given by:
+\begin{equation}
+    \boxed{f_{\text{BH}} \approx \frac{v}{\lambda_{BH}} = 3.1 \times 10^{-13} \si{Hz}}
+\end{equation}
+Repeating the exact same calculation for MACHOs with mass $10^{-3}M_\odot$, we find:
+\begin{equation}
+    \boxed{d_{\text{MACHO}} \approx}
+\end{equation}
+\begin{equation}
+    \boxed{f_{\text{MACHO}} \approx}
+\end{equation}
+
+\subsection{Draco Galaxy}
+If we assume that the velocity dispersion is isotropic, then the 3D RMS velocity is equal to the three times the 1D mean square velocity $\sigma_r$, so:
+\begin{equation}
+    \langle v^2 \rangle = 3(10.5 \si{km.s^{-1}})^2 = 3.31 \times 10^8 \si{m.s^{-1}}
+\end{equation}
+Using the steady state virial theorem, we know that:
+\begin{equation}
+    \frac{1}{2}M\langle v^2\rangle = \frac{\alpha}{2}\frac{GM^2}{r_h}
+\end{equation}
+Which we can rearrange for $M$:
+\begin{equation}
+    M = \frac{\langle v^2\rangle r_h}{\alpha G}
+\end{equation}
+Assuming that $\alpha = 0.45$, we can calculate the mass of the Draco galaxy to be:
+\begin{equation}
+    \boxed{M = \frac{3.31 \times 10^8 \si{m.s^{-1}} \cdot 120 \si{pc}}{0.45 * 6.67 \times 10^{-11}\si{m^3.kg^{-1}.s^{-2}}} = = 3.89 \times 10^{33}\si{kg} = 2.04 \times 10^7 M_\odot}
+\end{equation}
+The mass to light ratio is then:
+\begin{equation}
+    \boxed{\frac{M}{L} = \frac{2.04 \times 10^7 M_\odot}{1.8\times 10^5 L_\odot} \approx  113\frac{M_\odot}{L_\odot}}
+\end{equation}
+Some possible errors: The isotropy assumption of the velocity dispersion (on a local scale, the galaxy is certainly not isotropic). Assuming that the galaxy was in a steady state. Assuming $\alpha = 0.45$. 
+
+\subsection{Gravitational Lensing of Earth}
+The local curvature of spacetime causes the photon to be deflected by angle:
+\begin{equation}
+    \boxed{\alpha_{\text{Earth}} = \frac{4GM}{c^2R} = 2.8 \times 10^{-9}\si{rad}}
+\end{equation}
+For a white dwarf and a neutron star, we get:
+\begin{equation}
+    \boxed{\alpha_{\text{dwarf}} = 4.0 \times 10^{-4}\si{rad}}
+\end{equation}
+\begin{equation}
+    \boxed{\alpha_{\text{neut}} = 0.74\si{rad}}
+\end{equation}
+
+\subsection{Halo Mass Density}
+For a spherically symmetric mass distribution, we can model the density as:
+\begin{equation}
+    \rho(r) = \frac{1}{4\pi r^2}\dod{M(r)}{r}
+\end{equation}
+Since $M(r) = \frac{v^2 r}{G}$, $\dod{M(r)}{r} = \frac{v^2}{G}$ and so the above becomes:
+\begin{equation}
+    \rho(r) = \frac{v^2}{4 G\pi r^2}
+\end{equation}
+Note that we have assumed here that $v$ is approximately constant with $r$. Indeed, we find that $v(r) \approx 230\si{km.s^{-1}}$ out to $r = 35\si{kpc}$ for our galaxy, so we are justified as treating it as a constant in our derivation. Putting in this value for $v$ and $G$, we get:
+\begin{equation}
+    \boxed{\rho(r) = \frac{1}{r^2}6.3\times 10^{19}\si{kg.m^{-1}} = \frac{1}{r^2}9.78 \times 10^{11}M_\odot\si{Mpc}}
+\end{equation}
+If we look at the mass density of the cosmological constant (assuming it to be uniform), we have:
+\begin{equation}
+    \boxed{\rho_\lambda = \Omega_{\Lambda}\rho_{\text{crit}} = 0.7 \cdot 1.28 \times 10^{11} M_\odot \si{Mpc^{-3}} \approx 10^{11} M_\odot \si{Mpc^{-3}}}
+\end{equation}
+So within our galactic halo (which only extends to $\sim 75\si{kpc}$), the mass density from the dark matter halo is evidently is much larger than the cosmological constant; it therefore shouldn't significaly affect thae dynamics of our galaxy's halo.
+
+\subsection{Cluster Collisions}
+The number density of galaxies in this half-mass radius is:
+\begin{equation}
+    \boxed{n = \frac{N}{V} = \frac{N}{\frac{4}{3}\pi r_h^3} = 70.7 \si{Mpc^{-3}}}
+\end{equation}
+If the typical cross sectional area is $\Sigma \approx 10^{-3}\si{Mpc^2}$, then the mean free path of the Coma cluster before it hits another galaxy is:
+\begin{equation}
+    \boxed{\lambda = \frac{1}{\Sigma n} = \frac{1}{(10^{-3}\si{Mpc^2})(70.7 \si{Mpc^{-3}})} = 14.1 \si{Mpc}}
+\end{equation}
+If the velocity dispersion of the Coma cluster is $\sigma \approx 880\si{km.s^{-1}}$,  assuming isotropy we can obtain the 3D RMS velocity to be:
+\begin{equation}
+    \langle v^2 \rangle = 3(880\si{km.s^{-1}})^2 = 2.32 \times 10^{12} \si{m^2 s^{-2}}
+\end{equation}
+Then approximating $\langle v \rangle \approx \sqrt{\langle v^2 \rangle}$, we get:
+\begin{equation}
+    \langle v\rangle \approx 1.52 \times 10^6 \si{m.s^{-1}} = 4.9 \times 10^{-17} \si{Mpc.s^{-1}}
+\end{equation}
+Hence the average time between collisions is:
+\begin{equation}
+    \boxed{t = \frac{\lambda}{\langle v \rangle} = \frac{14.1 \si{Mpc}}{4.9 \times 10^{-17} \si{Mpc.s^{-1}}} = 2.9 \times 10^{17}\si{s} = 9.2 \si{Gyr}}
+\end{equation}
+The Hubble time is $H_0^{-1} \approx 14\si{Gyr}$, so $t$ is less than that, but on the same order of magnitude.
+
+\subsection{Solar vs. CMB neutrinos}
+Assuming isotropic emission, neutrinos from the sun (by the time they reach Earth) are spread out over area:
+\begin{equation}
+    A_{\text{shell}} = 4\pi R^2
+\end{equation}
+where $R = 1 \si{AU}$. Letting $A_{\text{human}}$ be the cross-sectional area of a human being, the approximate number of solar photons that hit us per second is:
+\begin{equation}
+    r_{\nu} = r_{\text{sun}}\frac{A_{\text{human}}}{A_{\text{shell}}}
+\end{equation}
+Modelling the human body as a tube of length $L_{\text{human}}$, the time that a given photon will spend inside the body is:
+\begin{equation}
+    t_{\nu} = \frac{L_{\text{human}}}{c}
+\end{equation}
+So the number of neutrinos inside of us at any given moment will be:
+\begin{equation}
+    N = r_{\nu}t_{\nu} =  r_{\text{sun}}\frac{A_{\text{human}}}{A_{\text{shell}}}\frac{L_{\text{human}}}{c} = \frac{r_{\text{sun}}V_{\text{human}}}{4\pi R^2 c}
+\end{equation}
+Approximating $V_{\text{human}} \sim 0.1\si{m^3}$, and using $R = 1 \si{AU} = 1.5 \times 10^{11}\si{m}$, $c = 3.0\times 10^{8}\si{m.s^{-1}}$ and $r_{\text{sun}} = 2 \times 10^{38}\si{neutrinos.s^{-1}}$ (given in the question) we find:
+\begin{equation}
+    \boxed{N_{\text{sun}} = 2.4 \times 10^{5} \si{neutrinos}}
+\end{equation}
+Which gives us our result for the number of solar neutrinos in our body at any given moment. The number density of neutrinos from the cosmic neutrino background is 3/11 times the number density of CMB photons (per neutrino flavour), so accounting for the 3 flavours, we get:
+\begin{equation}
+    n_\nu = 3\left(\frac{3}{11}\right)n_\gamma = \frac{9}{11}(4.108 \times 10^{8}\si{m^{-3}}) = 3.36 \times 10^8 \si{m^{-3}}
+\end{equation}
+So taking our volume to be roughly $V = \sim 0.1\si{m^3}$, we have approximately:
+\begin{equation}
+    \boxed{N_{\text{CNB}} = 3.36 \times 10^7\si{neutrinos}}
+\end{equation}
+cosmic neutrino background neutrinos inside of us at any moment. Hence there are around $\boxed{\text{100 times}}$ the amount of cosmic neutrino background neutrinos inside of us as there are solar.

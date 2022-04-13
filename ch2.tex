@@ -1,0 +1,186 @@
+\section[Fundamental Observations]{\hyperlink{toc}{Fundamental Observations}}
+\subsection{Human blackbody radiation}
+The energy density of blackbody radiation is given by:
+\begin{equation}
+  \e_\gamma = \alpha T^4
+\end{equation}
+Approximating a human being as a sphere with volume 1\si{m^3}, an considering that photons travel at speed $c$ we have that the rate of energy radiation is:
+\begin{equation}
+  \boxed{E = c A \e_\gamma = cA\alpha T^4 \sim 2.10 \times 10^3 \si{W}}
+\end{equation} 
+
+\subsection{CMB photon rate}
+We can calculate the photon number density of the CMB to be:
+\begin{equation}
+  n_\gamma = \beta T^3 = (2.029 \times 10^{7}\si{m^{-3}.K^{-3}})(2.8255\si{K})^3 = 4.107 \times 10^8 \si{m^{-3}}
+\end{equation}
+Approximating our body to be a perfect sphere with cross sectional area $A \sim 1\si{m}$, since photons travel at a rate $c \si{m.s^{-1}}$ the rate at which they pass through us is:
+\begin{equation}
+  \boxed{r \sim c A n_\gamma = (3.00 \times 10\si{m.s^{-1}})(1\si{m^2})(4.107 \times 10^8 \si{m^{-3}}) = 1.23 \times 10^{17} \si{s^{-1}}}
+\end{equation}
+
+\subsection{How long for the CMB to warm you up?}
+The energy per photon of the CMB is:
+\begin{equation}
+  \frac{\e_\gamma}{n_\gamma} = 1.02 \times 10^{-22}\si{J}
+\end{equation}
+The energy required to raise my temperature by $1\si{nK}$ is:
+\begin{equation}
+  \Delta E = Cm\Delta T = (4200\si{J.kg^{-1}.K^{-1}})(50\si{kg})(10^{-9}\si{K}) = 2.1 \times 10^{-4}\si{J}
+\end{equation}
+So solving for the time to heat up by 1 nanoKelvin:
+\begin{equation}
+  \boxed{t_{1\si{nK}} = \frac{\Delta E}{r\frac{\e_\gamma}{n_\gamma}} \sim 16.8\si{s}}
+\end{equation}
+
+
+\subsection{Tired Light}
+We start with the energy loss per unit distance propsed by the ``tired light hypothesis'':
+\begin{equation}
+    \dod{E}{r} = -kE
+\end{equation}
+This is the all-too-famous exponential decay ODE, which has solution:
+\begin{equation}
+    E(r) = C\exp(-kr)
+\end{equation}
+In principle we could use separation of variables to solve the ODE, but let's just verify that this is the correct solution:
+\begin{equation}
+    \dod{}{r}\left(C\exp(-kr)\right) = -kC\exp(-kr) = -kE\quad  \checkmark
+\end{equation}
+Letting $E(0) = E_0$ be the distance of the energy of the photon when emitted (before it has travelled and lost energy), we get:
+\begin{equation}
+    E_0 = E(0) = C\exp(-k(0)) = C \implies C = E_0
+\end{equation}
+Therefore:
+\begin{equation}\label{expsol}
+    E(r) = E_0\exp(-kr)
+\end{equation}
+Now, using the energy-momentum relation and the DeBroglie wavelength relation, we have:
+\begin{equation}
+    E = pc = \frac{hc}{\lambda}
+\end{equation}
+So substituting this into \eqref{expsol} we get:
+\begin{equation}
+    \frac{hc}{\lambda_r} = \frac{hc}{\lambda_0}\exp(-kr)
+\end{equation}
+Where $\lambda_r$ is the observed/measured photon wavelength at distance $r$ from the source and $\lambda_0$ is the photon wavelength measured at the source. Rearranging we obtain:
+\begin{equation}\label{lambdas}
+    \frac{\lambda_r}{\lambda_0} = \exp(kr)
+\end{equation}
+Now we recall the definition of redshift:
+\begin{equation}
+    z = \frac{\lambda_r - \lambda_0}{\lambda_0} = \frac{\lambda_r}{\lambda_0} - 1
+\end{equation}
+Substituting this into \eqref{lambdas} we get:
+\begin{equation}
+    z = \exp(kr) - 1
+\end{equation}
+Which adding one and taking the logarithm of both sides we get:
+\begin{equation}
+    \log(1 + z) = kr
+\end{equation}
+If $z \ll 1$, then by Taylor expanding to first order we obtain:
+\begin{equation}
+    \log(1+z) \approx z
+\end{equation}
+So in this limit we have:
+\begin{equation}\label{ansq1}
+    \boxed{z = kr}
+\end{equation}
+From which we see a linear distance-redshift relation. For the last part of the question, we recall Hubble's Law:
+\begin{equation}
+    z = \frac{H_0}{c}r
+\end{equation}
+So comparing this with \eqref{ansq1}, the value of $k$ to yield a Hubble constant of $H_0 = 68 \si{km.s^{-1}.Mpc^{-1}}$ must be:
+\begin{equation}
+    \boxed{k = \frac{H_0}{c} = 2.3 \times 10^{-4}\si{Mpc^{-1}}}
+\end{equation}
+
+\subsection{CMB Cutoff - The Cosmic Infrared background}
+We start with the number density for CMB photons:
+\begin{equation}
+  n(f)df = \frac{\e(f)df}{hf} = \frac{8\pi}{c^3}\frac{f^2df}{\exp(hf/kT) - 1}
+\end{equation}
+Since $hf > E_0 \gg kT$, we have that $\exp(hf/kT) \gg 1$ and so $\exp(hf/kT) -1 \sim \exp(hf/kT)$. This yields:
+\begin{equation}
+  n(f)df \approx \frac{8\pi}{c^3}f^2\exp(-\frac{hf}{kT})df
+\end{equation}
+Now, to get $n(hf > E_0)$ we integrate this expression from $E_0/h$ to $\infty$.
+\begin{equation}
+  n(hf > E_0) = \int_{E_0/h}^\infty \frac{8\pi}{c^3}f^2\exp(-\frac{hf}{kT})df
+\end{equation}
+Integrating by parts (with $u = f^2, dv = \exp(-hf/kT)$), we have:
+\begin{equation}
+  n(hf > E_0) = \frac{8\pi}{c^3}\left(\left.f^2\frac{-kT}{h}\exp(-\frac{hf}{kT})\right|_{E_0/h}^\infty - \int_{E_0/h}^\infty 2f\frac{-kT}{h}\exp(-\frac{hf}{kT})df\right)
+\end{equation}
+The term at infinity goes to zero, so:
+\begin{equation}
+  n(hf > E_0) = \frac{8\pi}{c^3}\left(\frac{kTE_0^2}{h^3}\exp(-\frac{E_0}{kT})+ \frac{2kT}{h}\int_{E_0/h}^\infty f\exp(-\frac{hf}{kT})df\right)
+\end{equation}
+We now integrate by parts again (with $u = f, dv = \exp(-\frac{hf}{kT})$) to get:
+\begin{equation}
+  n(hf > E_0) = \frac{8\pi}{c^3}\left(\frac{kTE_0^2}{h^3}\exp(-\frac{E_0}{kT})+ \frac{2kT}{h}\left(\left.f\frac{-kT}{h}\exp(-\frac{hf}{kT})\right|_{E_0/h}^\infty - \int_{E_0/h}^\infty \frac{-kT}{h}\exp(-\frac{hf}{kT})df\right)\right)
+\end{equation}
+Again the term at infinity goes to zero and we get:
+\begin{equation}
+  n(hf > E_0) = \frac{8\pi}{c^3}\left(\frac{kTE_0^2}{h^3}\exp(-\frac{E_0}{kT})+ \frac{2kT}{h}\left(\frac{kTE_0}{h^2}\exp(-\frac{E_0}{kT}) + \frac{kT}{h}\int_{E_0/h}^\infty\exp(-\frac{hf}{kT})df\right)\right)
+\end{equation}
+Finally the last integral is easy:
+\begin{equation}
+  n(hf > E_0) = \frac{8\pi}{c^3}\left(\frac{kTE_0^2}{h^3}\exp(-\frac{E_0}{kT})+ \frac{2kT}{h}\left(\frac{kTE_0}{h^2}\exp(-\frac{E_0}{kT}) + \frac{kT}{h}\left(\left.\frac{-kT}{h}\exp(-\frac{hf}{kT})\right|_{E_0/h}^\infty\right)\right)\right)
+\end{equation}
+So after this tedious calculation, we have:
+\begin{equation}
+  n(hf > E_0) = \frac{8\pi}{c^3}\exp(-\frac{E_0}{kT})\left[\frac{kTE_0^2}{h^3} + \frac{2k^2T^2E_0}{h^3} + \frac{2k^3T^3}{h^3}\right]
+\end{equation}
+Using that $E_0 \gg kT$ again, we can neglect all but the first term (so we could have really avoided the latter two integration steps, but alas):
+\begin{equation}
+  n(hf > E_0) \approx \frac{8\pi kTE_0^2}{c^3h^3}\exp(-\frac{E_0}{kT})
+\end{equation}
+Now taking the ratio of this with $n_\gamma$:
+\begin{equation}
+  \boxed{\frac{n(hf > E_0)}{n_\gamma} \approx \frac{\frac{8\pi kTE_0^2}{c^3h^3}\exp(-\frac{E_0}{kT})}{\frac{2.4041}{\pi^2}\frac{k^3}{\hbar^3c^3}T^3} = 0.42\left(\frac{E_0}{kT}\right)^2\exp(-\frac{E_0}{kT})}
+\end{equation}
+which was the desired formula. Next, we calculate the fraction of ``CMB'' photons that are actually far-IR photons. We first consider the wavelength-frequency relation for light:
+\begin{equation}
+  c = \lambda f
+\end{equation}
+so $\lambda < 1\si{mm}$ corresponds to $f > 3 \times 10^{11}\si{Hz}$ and so:
+\begin{equation}
+  E = hf > 2 \times 10^{-22}\si{J}
+\end{equation}
+So using the above derived relation with $T = 2.7255\si{K}$ we have:
+\begin{equation}
+  \boxed{\frac{n(hf > 2 \times 10^{-22}\si{J})}{n_\gamma} \approx 0.42\left(\frac{2 \times 10^{-22}\si{J}}{k\cdot 2.7255\si{K}}\right)^2\exp(-\frac{2 \times 10^{-22}\si{J}}{k\cdot 2.7255\si{K}}) = 0.058}
+\end{equation}
+
+
+\subsection{CMB Cutoff - The Other Direction}
+We again recall the number density of the CMB photons:
+\begin{equation}
+  n(f)df = \frac{8\pi}{c^3}\frac{f^2df}{\exp(hf/kT) - 1}
+\end{equation}
+Since $kT \gg E_0 > hf$, we have that:
+\begin{equation}
+  \exp(\frac{hf}{kT}) \approx 1 + \frac{hf}{kT}
+\end{equation}
+by Taylor expanding to first order. The number density in this regime therefore becomes:
+\begin{equation}
+  n(f)df \approx \frac{8\pi}{c^3}\frac{f^2df}{1 + \frac{hf}{kT} - 1} = \frac{8\pi k T}{hc^3}fdf
+\end{equation}
+Integrating this from $0$ to $E_0/h$, we obtain $n(hf < E_0)$:
+\begin{equation}
+  n(hf < E_0) \approx \int_{0}^{E_0/h}\frac{8\pi k T}{hc^3}fdf = \frac{4\pi kT}{hc^3}\left. f^2\right|_0^{E_0/h} = \frac{4\pi kTE_0^2}{h^3c^3}
+\end{equation}
+So solving for the fraction of photons in the CMB with $hf < E_0$ we have:
+\begin{equation}
+  \boxed{\frac{n(hf < E_0)}{n_\gamma} \approx \frac{\frac{4\pi kTE_0^2}{h^3c^3}}{\frac{2.4041}{\pi^2}\frac{k^3}{\hbar^3c^3}T^3} = 0.21\left(\frac{E_0}{kT}\right)^2}
+\end{equation}
+Solving for the fraction of CMB photons with $\lambda > 3\si{cm}$ (and hence capable of passing through the Earth's atmosphere) we again use the wavelength-frequency relation for light of $c = \lambda f$. $\lambda > 3\si{cm}$ corresponds to $f < 10^{10}\si{Hz}$ so:
+\begin{equation}
+  E = hf < 6.63 \times 10^{-24}\si{J}
+\end{equation}
+So using our obtained relation with $T = 2.7255\si{K}$ we have:
+\begin{equation}
+  \boxed{\frac{n(hf < 7 \times 10^{-24}\si{J})}{n_\gamma} \approx  0.21\left(\frac{7 \times 10^{-24}\si{J}}{k\cdot 2.7255\si{K}}\right)^2 = 0.0065}
+\end{equation}
