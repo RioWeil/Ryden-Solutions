@@ -1,6 +1,6 @@
 \section[Inflation and the Very Early Universe]{\hyperlink{toc}{Inflation and the Very Early Universe}}
 
-\subsection{}
+\subsection{Upper limit on Primordial Density (ADD LATER)}
 
 \subsection{Solving the Monopole Problem}
 If monopoles formed at the GUT time with one monopole per horizon of mass $m_M = m_{GUT}$, then the energy density of these monopoles would be given by:
@@ -41,7 +41,56 @@ which we can solve for $N$ to obtain:
 \end{equation}
 
 
-\subsection{}
+\subsection{False Vacuum}
+The Universe dominated by the false vacuum has the same structure as one with dominated by a cosmological constant. In such a universe, the Hubble parameter s given by Ryden 5.72:
+\begin{equation}
+    \boxed{H_i = \left(\frac{8\pi G\e_{\Lambda}}{3c^2}\right)^{1/2} = 1.83 \times 10^{-18}\si{s^{-1}} = 0.83H_0}
+\end{equation}
+where we take $H_0$ is the Hubble constant in our universe. We assume that at the false vacuum decay time that the false vacuum decays into blackbody photons, so we can therefore use the blackbody radiation temperature to solve for what the temperature of the Universe would be at this time:
+\begin{equation}
+    \boxed{T = \sqrt[4]{\frac{\e_{\Lambda}}{\alpha}} = 29\si{K}}
+\end{equation}
+To find the energy density of matter at this time, we first compute the scale factor at this time; this is given by Ryden 5.73 to be:
+\begin{equation}
+    a(t_f) = a(t_0)e^{H_i(t_f - t_0)} = e^{H_i(t_f - t_0)} 
+\end{equation}
+where we take $a(t_0) = 1$ by convention. So with $H_i$ as above, $t_f = 50t_0$ and $t_0 = 13.7\si{Gyr}$, we find:
+\begin{equation}
+    a(t_f) = 6.7 \times 10^{16}
+\end{equation}
+So the energy density of matter at this time would be:
+\begin{equation}
+    \boxed{\e_{m}(t_f) = a(t_f)^{-3} \e_{m, 0} = 5 \times 10^{-48}\si{MeV.m^{-3}}}
+\end{equation}
+To find when the universe is again dominated by matter, we wish to find the time when:
+\begin{equation}\label{matterradequality}
+    \e_{m} = \e_r.
+\end{equation}
+Further, we know that:
+\begin{equation}\label{matterradscaling}
+    \e_m(a) = \frac{\e_{m, 0}}{a^3}, \quad \e_{r}(a) = \frac{\e_{r, 0}}{a^4}
+\end{equation}
+First solving for what $\e_{r, 0}$ would be, we have:
+\begin{equation}
+    \e_{r, 0} = \e_{r}(t_f)a(t_f)^4 = 6.7 \times 10^{70}\si{MeV.m^{-3}}
+\end{equation}
+Combining \eqref{matterradequality} and \eqref{matterradscaling} we find:
+\begin{equation}
+    \frac{\e_{m, 0}}{a_{rm}^3} = \frac{\e_{r, 0}}{a_{rm}^4}
+\end{equation}
+Hence:
+\begin{equation}
+    a_{rm} = \frac{\e_{r, 0}}{\e_{m, 0}}
+\end{equation}
+Further in a radiation dominated universe we know we have $a(t) = \left(\frac{t}{t_0}\right)^{1/2}$ (Ryden Eq. 5.60), so:
+\begin{equation}
+    \boxed{t_{rm} = t_0 \left(\frac{\e_{r, 0}}{\e_{m, 0}}\right)^2}
+\end{equation}
+Numerically we obtain:
+\begin{equation}
+    \boxed{t_{rm} = 2.7 \times 10^{136}\si{Gyr}}
+\end{equation}
+
 \subsection*{Gamow's CMB Prediction (10.3 in first ed.) (ADD LATER)}
 \addcontentsline{toc}{subsection}{\protect\numberline{}Gamow's CMB Prediction (10.3 in first ed.) (ADD LATER)}
 \begin{tcolorbox}
