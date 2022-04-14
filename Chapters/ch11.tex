@@ -70,9 +70,25 @@ At long times, the latter terms vanishes, so:
 That is, at long times the fluctuations are constant.
 
 \subsection{Photon-Baryon Fluid (ADD LATER)}
-\subsection{Galaxy Formation by Gravitational Collapse (ADD LATER)}
+\subsection{Milky Way Gravitational Collapse (ADD LATER)}
 
-\subsection{}
+\subsection{Coma Cluster Gravitational Collapse}
+We first note (from Ryden 7.37) that:
+\begin{equation}
+    M_{\text{Coma}} = \frac{\avg{v^2}r_h}{\alpha G}
+\end{equation}
+Taking again $\rho$ to be uniform, we find:
+\begin{equation}
+    \rho = \frac{M_{\text{Coma}}}{V} = \frac{\frac{\avg{v^2}r_h}{\alpha G}}{\frac{4}{3}\pi r_h^3} = \frac{3\avg{v^2}}{4\pi\alpha G r_h^2}
+\end{equation}
+So using that $t_{\text{min}} \approx \frac{1}{\sqrt{G\rho}}$ we find:
+\begin{equation}
+    t_{\text{min}} \approx \frac{1}{\sqrt{G \frac{3\avg{v^2}}{4\pi\alpha G r_h^2}}} = \sqrt{\frac{4\pi \alpha}{3}}\frac{r_h}{\sqrt{\avg{v^2}}} \sim \frac{r_h}{\sqrt{\avg{v^2}}} 
+\end{equation}
+So numerically we find: 
+\begin{equation}
+    \boxed{t_{\text{min}} \approx 3.05 \times 10^{16}\si{s} = 967\si{Myr}}
+\end{equation}
 
 \subsection{Mean Square Mass Fluctuation and Standard Deviation of Density Field}
 The standard deviation of the density field for a Gaussian field can be computed (in the case of a Gaussian field) as (Ryden Eq. 11.67):
