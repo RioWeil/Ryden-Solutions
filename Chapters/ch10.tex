@@ -1,6 +1,78 @@
 \section[Inflation and the Very Early Universe]{\hyperlink{toc}{Inflation and the Very Early Universe}}
 
-\subsection{Upper limit on Primordial Density (ADD LATER)}
+\subsection{Upper limit on Primordial Density}
+Taking the hint, prior to inflation the Friedmann equation is dominated by the radiation and curvature term, so:
+\begin{equation}
+    \frac{H^2}{H_0^2} = \frac{\Omega_{r, 0}}{a^4} + \frac{1 - \Omega_{r, 0}}{a^2}
+\end{equation}
+Or writing $H = \frac{\dot{a}}{a}$:
+\begin{equation}
+    \frac{\dot{a}^2}{H_0^2} = \frac{\Omega_{r, 0}}{a^2} + 1 - \Omega_{r, 0}
+\end{equation}
+We take our reference time to be at $t = t_p$, so $H_0 = H_p$ and $\Omega_{r, 0} = \Omega(t_p)$ and hence:
+\begin{equation}
+    \frac{\dot{a}^2}{H_p^2} = \frac{\Omega(t_p)}{a^2} + 1 - \Omega(t_p)
+\end{equation}
+We can write $\dot{a} = \od{a}{t}$ and integrate both sides to obtain:
+\begin{equation}
+    H_p\int_{0}^{t} \mathrm d t = \int_{0}^{a}\frac{a'\mathrm d a}{\sqrt{\Omega(t_p) + (1 - \Omega(t_p))a'^2}}
+\end{equation}
+Where we set $a(t = 0) = 0$. In order to perform the integral on the LHS, we make the substitution $u = \Omega(t_p) + (1 - \Omega(t_p))a'^2$ which gives $du = 2(1 - \Omega(t_p))a' da'$. It also changes the bouds of integration to be from $\Omega(t_p)$ to $\Omega(t_p) + (1 - \Omega(t_p))a^2$. We therefore obtain:
+\begin{equation}
+    H_p t = \int_{\Omega(t_p)}^{\Omega(t_p) + (1 - \Omega(t_p))a^2} \frac{1}{2(1 - \Omega(t_p))}\frac{1}{\sqrt{u}}\mathrm d u
+\end{equation}
+This integral can now be performed to obtain:
+\begin{equation}
+    H_p t = \frac{1}{2(1 - \Omega(t_p))} \left(\left. 2\sqrt{u}\right|_{\Omega(t_p)}^{\Omega(t_p) + (1 - \Omega(t_p))a^2}\right) = \frac{1}{1 - \Omega(t_p)}\left(\sqrt{\Omega(t_p) + (1 - \Omega(t_p))a^2}- \sqrt{\Omega(t_p)}\right)
+\end{equation}
+We can now solve for $a(t)$:
+\begin{equation}
+    a(t) = \sqrt{\frac{\left[(1 - \Omega(t_p))H_p t +  \sqrt{\Omega(t_p)} \right]^2 - \Omega(t_p)}{(1 - \Omega(t_p))}}
+\end{equation}
+In order to find a maximum permissable value of $\Omega(t_p)$, we want to see the big crunch exactly at the start of the inflationary epoch at $t_i$, so:
+\begin{equation}
+    a(t_i) =  \sqrt{\frac{\left[(1 - \Omega(t_p))H_p t_i +  \sqrt{\Omega(t_p)} \right]^2 - \Omega(t_p)}{(1 - \Omega(t_p))}} = 0
+\end{equation}
+From this we obtain:
+\begin{equation}
+    (1 - \Omega(t_p))H_p t_i +  \sqrt{\Omega(t_p)}= \pm \sqrt{\Omega(t_p)}
+\end{equation}
+If $t_i = 0$ we have that the LHS equals $+ \sqrt{\Omega(t_p)}$, but since we want $t_i > 0$, we solve for the negative solution. this yields:
+\begin{equation}
+    H_pt_i = \frac{-2\sqrt{\Omega(t_p)}}{1 - \Omega(t_p)}
+\end{equation}
+From the previous question, we know that $H = \frac{1}{2t}$ in a radiation-dominated universe, so $H_p = \frac{1}{2t_p}$ and so:
+\begin{equation}
+    \frac{t_i}{2t_p} = \frac{2\sqrt{\Omega(t_p)}}{\Omega(t_p) - 1}
+\end{equation}
+For conveninece, let us define $\alpha = \frac{t_i}{4t_p}$:
+\begin{equation}
+    \alpha = \frac{\sqrt{\Omega(t_p)}}{\Omega(t_p) - 1}
+\end{equation}
+Rearranging, we find a quadratic equation in $\Omega(t_p)$:
+\begin{equation}
+    \Omega(t_p)^2 - (2 + \frac{16 t_p^2}{t_i^2})\Omega(t_p) + 1 = 0
+\end{equation}
+This has solutions:
+\begin{equation}
+    \Omega(t_p) = \frac{(2 + \frac{16 t_p^2}{t_i^2}) \pm \sqrt{(2 + \frac{16 t_p^2}{t_i^2})^2 - 4}}{2}
+\end{equation}
+Since $\Omega(t_p) > 1$, we reject the negative solution above. So, the maximum possible $\Omega(t_p)$ is given by:
+\begin{equation}
+    \boxed{\Omega(t_p) = \frac{(2 + \frac{16 t_p^2}{t_i^2}) +  \sqrt{\frac{64 t_p^2}{t_i^2} + \frac{256 t_p^4}{t_i^4}}}{2}}
+\end{equation}
+Since $t_p \ll t_i$, we can neglect all powers of $\frac{t_p}{t_i}$ in the above expression that are higher than linear order. This yields:
+\begin{equation}
+    \boxed{\Omega(t_p) \approx 1 + 4\frac{t_p}{t_i}}
+\end{equation}
+For $t_i = 10^{-36}\si{s}$, we have:
+\begin{equation}
+    \boxed{\Omega(t_p) = 1 + 2 \times 10^{-7}}
+\end{equation}
+For $t_i = 10^{-26}\si{s}$, we have:
+\begin{equation}
+    \boxed{\Omega(t_p) = 1 + 2 \times 10^{-17}}
+\end{equation}
 
 \subsection{Solving the Monopole Problem}
 If monopoles formed at the GUT time with one monopole per horizon of mass $m_M = m_{GUT}$, then the energy density of these monopoles would be given by:
@@ -91,8 +163,61 @@ Numerically we obtain:
     \boxed{t_{rm} = 2.7 \times 10^{136}\si{Gyr}}
 \end{equation}
 
-\subsection*{Gamow's CMB Prediction (10.3 in first ed.) (ADD LATER)}
-\addcontentsline{toc}{subsection}{\protect\numberline{}Gamow's CMB Prediction (10.3 in first ed.) (ADD LATER)}
+\subsection*{Gamow's CMB Prediction (10.3 in first ed.)}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Gamow's CMB Prediction (10.3 in first ed.)}
 \begin{tcolorbox}
     A fascinating bit of cosmological history is that of George Gamow's prediction of the Cosmic Microwave Background in 1948. (Unfortunately, his prediction was premature; by the time the CMB was actually discovered in the 1960's, his prediction had fallen into obscurity.) Let's see if you can reproduce Gamow's line of argument. Gamow knew that nucleosynthesis must have taken place at a temperature $T_{\text {nuc }} \simeq 10^{9} \mathrm{~K}$, and that the age of the Universe is currently $t_{0} \simeq 10 \mathrm{Gyr}$. Assume that the Universe is flat and contains only radiation. With these assumptions, what was the energy density $\epsilon$ at the time of nucleosynthesis? What was the Hubble parameter $\mathrm{H}$ at the time of nucleosynthesis? What was the time $t_{\text {nuc }}$ at which nucleosynthesis took place? What is the current temperature $T_{0}$ of the radiation filling the Universe today? If the Universe switched from being radiation-dominated to being matter-dominated at a redshift $z_{r m}>0$, will this increase or decrease $T_{0}$ for fixed values of $T_{\text {nuc }}$ and $t_{0}$ ? Explain your answer.
 \end{tcolorbox}
+\noindent 
+If the Universe only contains radiation, the energy density is given by the black body energy density formula:
+\begin{equation}
+    \e_\gamma(T) = \alpha T^4
+\end{equation}
+So with $\alpha = 7.566\times 10^{-16}\si{J.m^{-3}.K^{-4}}$ and $T_{\text{nuc}} = 10^{9}\si{K}$ we have:
+\begin{equation}
+    \boxed{\e_{\text{nuc}} = \alpha T_{\text{nuc}}^4 = 7.566 \times 10^{20} \si{J.m^{-3}}}
+\end{equation}
+Furthermore, Ryden Eq. 5.63 gives the energy density in a radiation-only universe as a function of time to be:
+\begin{equation}
+    \e(t) = 0.030\frac{E_p}{l_p^3}\left(\frac{t}{t_p}\right)^{-2}
+\end{equation}
+We can invert the above formula to find $t_{\text{nuc}}$:
+\begin{equation}
+    t_{\text{nuc}} = \sqrt{0.030\frac{E_p}{l_p^3}}\frac{t_p}{\sqrt{\e(t_{\text{nuc}})}}
+\end{equation}
+which numerically gives:
+\begin{equation}
+    \boxed{t_{\text{nuc}} = 230\si{s}}
+\end{equation}
+Next, in a radiation dominated universe, we have (from Ryden Eq. 5.60):
+\begin{equation}
+    a(t) = \left(\frac{t}{t_0}\right)^{1/2}
+\end{equation}
+So the Hubble parameter is given by:
+\begin{equation}
+    H = \frac{\dot{a}}{a} = \frac{1}{2t}
+\end{equation}
+So at nucleosynthesis:
+\begin{equation}
+    \boxed{H_{\text{nuc}} = 4.3 \times 10^{-3}\si{s^{-1}}}
+\end{equation}
+The energy density of radiation scales as $\frac{1}{a^4}$, so we can use this to find the energy density of the universe today:
+\begin{equation}
+    \e_{r, 0} = \e_{\text{nuc}}a_{\text{nuc}}^4 = \e_{\text{nuc}}\left(\frac{t_{\text{nuc}}}{t_0}\right)^{2}
+\end{equation}
+so we can find the current temperature (which is still described by a black body) as:
+\begin{equation}
+    \alpha T_0^4 = \alpha T_{\text{nuc}}^4\left(\frac{t_{\text{nuc}}}{t_0}\right)^{2}
+\end{equation}
+\begin{equation}
+    T_0 =  T_{\text{nuc}}\left(\frac{t_{\text{nuc}}}{t_0}\right)^{1/2}
+\end{equation}
+Numerically we find:
+\begin{equation}
+    \boxed{T_0 = 27\si{K}}
+\end{equation}
+Now, we suppose that the Universe switched from being radiation-dominated to matter-dominated at some redshift $z_{rm} > 0$. This would not change the energy density at the time of nucleosynthesis, but the scale factor would now grow as:
+\begin{equation}
+    a(t) = \left(\frac{t}{t_0}\right)^{2/3}
+\end{equation}
+instead of the previous $\propto t^{1/2}$. Hence the energy density of the radiation would go down more rapidly than in the radiation-dominated-for-all times Universe, and hence the temperature $T_0$ today would $\boxed{\text{decrease}}$.

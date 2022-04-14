@@ -69,8 +69,88 @@ At long times, the latter terms vanishes, so:
 \end{equation}
 That is, at long times the fluctuations are constant.
 
-\subsection{Photon-Baryon Fluid (ADD LATER)}
-\subsection{Milky Way Gravitational Collapse (ADD LATER)}
+\subsection{Photon-Baryon Fluid}
+For the photon-baryon fluid, we have:
+\begin{equation}
+    \dod{P}{\e} = \dod{P}{a}\dod{a}{\e} = \dod{P}{a}\left(\dod{\e}{a}\right)^{-1}
+\end{equation}
+Since $P = P_\gamma = \frac{1}{3}\e_{\gamma} = \frac{1}{3}\e_{\gamma, 0} a^{-4}$, we find:
+\begin{equation}
+    \dod{P}{a} = -\frac{4}{3}\e_{\gamma, 0} a^{-5}
+\end{equation}
+Furthermore, since $\e = \e_\gamma + \e_{\text{bary}} = \e_{\gamma, 0}a^{-4} + \e_{\text{bary}, 0}a^{-3}$ we find:
+\begin{equation}
+    \dod{\e}{a} = -4\e_{\gamma, 0}a^{-5} - 3\e_{\text{bary}, 0}a^{-4}
+\end{equation}
+Therefore:
+\begin{equation}
+    \boxed{\dod{P}{\e} = \frac{-\frac{4}{3}\e_{\gamma, 0} a^{-5}}{-4\e_{\gamma, 0}a^{-5} - 3\e_{\text{bary}, 0}a^{-4}} = \frac{1}{3}\left(\frac{1}{1 + \frac{3}{4}\frac{\e_{\text{bary}, 0}}{\e_{\gamma,0}} a}\right)}
+\end{equation}. Now, we can find the sound speed to be:
+\begin{equation}\label{cs}
+    \boxed{c_s = c\left(\dod{P}{\e}\right)^{1/2} = c\sqrt{\frac{1}{3}\left(\frac{1}{1 + \frac{3}{4}\frac{\e_{\text{bary}, 0}}{\e_{\gamma,0}} a}\right)}}
+\end{equation}
+In Ryden Eq. 11.26, the Jeans length of the photon-baryon fluid neglecting the contribution from the baryons was estimated to be:
+\begin{equation}
+    \lambda_{J, \gamma} \approx 3\frac{c}{H(z_{\text{dec}})} \approx 0.66\si{Mpc}
+\end{equation}
+We can replace $c$ with $c_s$ in the above expression to determine $\lambda_J$ accounting for the baryons. Before this, we briefly resolve some remaining parameters in our expression for $c_s$. $z_{\text{dec}} = 1090$, so:
+\begin{equation}
+    a_{\text{dec}} = \frac{1}{1 + z_{\text{dec}}} = 9.17 \times 10^{-4}
+\end{equation}
+Furthermore, from the benchmark model we find the energy density ratio of:
+\begin{equation}
+    \frac{\e_{\text{bary}, 0}}{\e_{\gamma,0}} = \frac{\Omega_{\text{bary, 0}}}{\Omega_{\gamma, 0}} = \frac{0.048}{5.35\times 10^{-5}} = 897
+\end{equation}
+Plugging these values of $a_{\text{dec}}, \frac{\e_{\text{bary}, 0}}{\e_{\gamma,0}}$ into \eqref{cs}, we find:
+\begin{equation}
+    c_s = 0.45c
+\end{equation}
+compared to the $c_s = \frac{c}{\sqrt{3}} = 0.577c$ prediction neglecting baryons. Hence the Jeans length being proportional to $c_s$ gets scaled down by this ratio:
+\begin{equation}
+    \lambda_{J, \text{bary} + \gamma} = \frac{0.45c}{0.577c} \lambda_{J, \gamma} = 0.51\si{Mpc}
+\end{equation}
+So we were off by:
+\begin{equation}
+    \boxed{\lambda_{J, \gamma} - \lambda_{J, \text{bary} + \gamma} = 0.15\si{Mpc}}
+\end{equation}
+
+\subsection{Milky Way Gravitational Collapse}
+For any circular orbit (as we can assume for a spherical dark halo), the orbital speed is related to $R_{\text{halo}}$ and $M_{\text{gal}}$ by (Ryden Eq. 7.9):
+\begin{equation}\label{vcircular}
+    v^2 = \frac{GM_{\text{gal}}}{R_{\text{halo}}}
+\end{equation}
+Further assuming a uniform distribution of mass throughout the galaxy, we have:
+\begin{equation}\label{rhouniform}
+    \rho = \frac{M_{\text{gal}}}{V} = \frac{M_{\text{gal}}}{\frac{4}{3}\pi R_{\text{halo}}^3}
+\end{equation}
+Combining \eqref{vcircular} and \eqref{rhouniform}, we obtain:
+\begin{equation}
+    \rho = \frac{\frac{R_{\text{halo}} v^2}{G}}{\frac{4}{3}\pi R_{\text{halo}}^3} = \frac{v^2}{\frac{4}{3}\pi G R_{\text{halo}}^2}
+\end{equation}
+Substituting this into $t_{\text{min}} \approx \frac{1}{\sqrt{G\rho}}$ we find:
+\begin{equation}
+    t_{\text{min}} \approx \frac{1}{\sqrt{G\frac{v^2}{\frac{4}{3}\pi G R_{\text{halo}}^2}}} = \sqrt{\frac{3}{4\pi}}\frac{R_{\text{halo}}}{v}
+\end{equation}
+So we therefore conclude:
+\begin{equation}
+    \boxed{t_{\text{min}} \sim \frac{R_{\text{halo}}}{v}}
+\end{equation}
+For our own Galaxy, we take $R_{\text{halo}} \approx 75\si{kpc}$ and $v = 235\si{km.s^{-1}}$ to find:
+\begin{equation}
+    \boxed{t_{\text{min}} \approx 9.86 \times 10^{15}\si{s} = 312\si{Myr}}
+\end{equation}
+$t_{\text{min}}$ defines the maximum possible redshift in which we could see galaxies with comparable to $v$ and $R_{\text{min}}$; in other words we find $z(t_{\text{min}})$. Neglecting the early radiation period, we can take our universe to be dominated by matter and the cosmological constant. For this Universe, the Friedmann equation has the analytic solution (Ryden Eq. 5.101):
+\begin{equation}
+    H_0 t = \frac{2}{3\sqrt{1 - \Omega_{m, 0}}}\ln\left[\left(\frac{a}{a_{m\Lambda}}\right)^{3/2} + \sqrt{1 + \left(\frac{a}{a_{m\Lambda}}\right)^3}\right]
+\end{equation}
+With the Benchmark models of $H_0 = 68 \si{km.s^{-1}.Mpc^{-1}}$, $\Omega_{m, 0} = 0.31$, and $a_{m\Lambda} = 0.77$, and the pervious result that $t = t_{\text{min}} = 312\si{Myr}$, we can numerically solve for $a$ in the above relation. Doing so, we find:
+\begin{equation}
+    a_{\text{min}} = 0.069
+\end{equation}
+From which we obtain the maximum redshift:
+\begin{equation}
+    \boxed{z_{\text{max}} = \frac{1}{a_{\text{min}}} - 1 = 13.5}
+\end{equation}
 
 \subsection{Coma Cluster Gravitational Collapse}
 We first note (from Ryden 7.37) that:
