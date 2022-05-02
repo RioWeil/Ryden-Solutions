@@ -112,7 +112,19 @@ WLOG, we can choose our coordinate system that the first point of the triangle i
 
 \begin{figure}[htbp]
     \centering
-    TODO
+    \begin{tikzpicture}
+        \shade[ball color = gray!40, opacity = 0.4] (0,0) circle (2cm);
+        \draw (0,0) circle (2cm);
+        \draw (-2,0) arc (180:360:2 and 0.6);
+        \draw[dashed] (2,0) arc (0:180:2 and 0.6);
+        \draw[red, thick] (0, 2) arc (90:0:2);
+        \draw[red, thick] (0, 2) -- (0, -0.6);
+        \draw[red, thick] (0,-0.6) arc (270:360:2 and 0.6);
+        \node[red, left] at (0, 1) {$r$};
+        \node[red, right] at (0, 1.75) {$\alpha$};
+        \node[red, right] at (0, -0.35) {$\alpha$};
+        \node[red, left] at (2, 0) {$\alpha$};
+    \end{tikzpicture}
     \caption{Illustration of the triangle drawn for the spherical case of Problem 3.4.}
     \label{fig3.4}
 \end{figure}
