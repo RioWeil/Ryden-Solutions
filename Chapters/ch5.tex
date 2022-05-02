@@ -341,15 +341,7 @@ Or:
 \begin{equation}\label{59exp}
     \frac{3\sqrt{1 - \Omega_{m, 0}}}{2} = \arcsech(\sqrt{\Omega_{m, 0}})
 \end{equation}
-This equation can now be solved graphically for $\Omega_{m, 0}$ (I don't think an analytical closed form exists):
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.25]{Images/Q5-9.png}
-    \caption{Numerical solution for \eqref{59exp}.}
-    \label{plot59}
-\end{figure}
-
-From which we conclude:
+This equation can now be solved numerically for $\Omega_{m, 0}$ to find:
 \begin{equation}
     \boxed{\Omega_{m, 0} \approx 0.263}
 \end{equation}
@@ -397,7 +389,7 @@ So therefore the total number of baryons within the horizon, we have:
 \begin{tcolorbox}
 Let's make sure we can work through the mathematical steps for a closed matter-only (i.e. `Matter + Curvature') universe. Try to do this without looking up the book for every step! Start by writing the Friedmann equation for this case, using $a$ rather than $1+z$, and with the single parameter $\Omega_0$ (where this implicitly means `matter', here). Thus write an integral expression for $t$. It may not look trivial to solve this for $t(a)$ or $a(t)$, but you should be able to \emph{show} that the following parametric solution works [a `parametric solution' means that you can write doesn $y(\phi)$ and $x(\phi)$, both in terms of a parameter $\phi$, even if an explicit expression for $y(x)$ is hard or impossible]:
 \begin{equation}\label{parametric_a}
-    a(\theta) = \frac{1}{2}\frac{\Omega_0}{\Omega_1 - 1}(1-\cos\theta)
+    a(\theta) = \frac{1}{2}\frac{\Omega_0}{\Omega_0 - 1}(1-\cos\theta)
 \end{equation}
 \begin{equation}\label{parametric_t}
     t(\theta) = \frac{1}{2H_0}\frac{\Omega_0}{(\Omega_0 - 1)^{3/2}}(\theta - \sin\theta).
@@ -455,10 +447,11 @@ Which after some expanding and cancellation, becomes:
 \end{equation}
 Using the famous trig identity $\sin^2\theta + \cos^2\theta = 1$, we can identify \eqref{LHS_friedmann_mat} with \eqref{RHS_friedmann_mat} to conclude that this is indeed the correct solution.
 
-For the plot, we observe that the given parametric equations are exactly of those for a cycloid, so the curve of $a$ vs. $t$ will be exactly that of a cycloid. It is given below.
+For the plot, we observe that the given parametric equations are exactly of those for a cycloid, so the curve of $t(\theta)$ vs. $a(\theta)$ will be exactly that it is displayed below.
+
 \begin{figure}[htbp]
     \centering
-    TODO
-    \caption{<caption>}
+    \includegraphics[scale=0.7]{Images/Q5-A.pdf}
+    \caption{Plot of $t(\theta)$ vs. $a(\theta)$ for $\theta \in [0, 2\pi)$. $\Omega_0 = 2$ and $H_0 = 1$ were chosen for convenience of plotting.}
     \label{plotatcycloid}
 \end{figure}
