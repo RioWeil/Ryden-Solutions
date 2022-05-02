@@ -10,11 +10,11 @@ Taking the derivative w.r.t. $t_0$ of both sides of this equation, we obtain:
 \end{equation}
 There's a variety of terms to process here. First, combining Ryden Eqs. 5.39 and 5.42 we get:
 \begin{equation}
-    a(t) = \left(\frac{t}{t_O}\right)^{2/(3+3w)}
+    a(t) = \left(\frac{t}{t_0}\right)^{2/(3+3w)}
 \end{equation}
-Where $t_O$ is the age of the universe. Taking the time derivative, we have:
+Taking the time derivative, we have:
 \begin{equation}\label{dota51}
-    \dot{a}(t) = \frac{2}{3+3w}\left(\frac{t}{t_O}\right)^{2/(3+3w)}\frac{1}{t} = \frac{2}{3+3w}\frac{a(t)}{t}
+    \dot{a}(t) = \frac{2}{3+3w}\left(\frac{t}{t_0}\right)^{2/(3+3w)}\frac{1}{t} = \frac{2}{3+3w}\frac{a(t)}{t}
 \end{equation}
 We also have that:
 \begin{equation}\label{t051}
@@ -313,7 +313,7 @@ At $t_0$ we have that $a(t_0) = 1$ by convention, so solving for $t_0 - t_{\text
 \end{equation}
 
 \subsection{$\Omega_{m, 0}$ for $t = H_0^{-1}$}
-In a spatially flat and matter + cosmological constant filled universe, te Friedmann equation can be integrated to yield the analytic solution relating $t$ and $a$ (Ryden Eq. 5.101):
+In a spatially flat and matter + cosmological constant filled universe, the Friedmann equation can be integrated to yield the analytic solution relating $t$ and $a$ (Ryden Eq. 5.101):
 \begin{equation}\label{analyticmlambda}
     H_0t = \frac{2}{3\sqrt{1 - \Omega_{m, 0}}}\ln\left[\left(\frac{a}{a_{m\Lambda}}\right)^{3/2} + \sqrt{1 + \left(\frac{a}{a_{m\Lambda}}\right)^3}\right]
 \end{equation}
@@ -375,13 +375,9 @@ Next, solving for the total amount of energy of photons within the horizon dista
 \begin{equation}
     \boxed{E_{\text{photons}} = V_{\text{hor}}(t_0)\e_{\gamma, 0} = 1.41 \times 10^{67} \si{J}}
 \end{equation}
-Finally, we solve for the number of baryons in the universe. This will be the total mass of baryons within the universe divided by the mean mass per Baryon. Approximating baryonic matter as 75\% hydrogen and 25\% helium, we have the mean mass is given by:
+Finally, we solve for the number of baryons in the universe. This will be the total mass of baryons within the universe divided by the mean mass per Baryon, which we take to be the mass of a proton $m_p$. Therefore the total number of baryons within the horizon can be solved for as:
 \begin{equation}
-    m_{\text{avg}} = 0.75m_{\text{H}} + 0.25m_{\text{He}} \approx 0.75(m_p) + 0.25(4m_p) = 1.75m_{p} = 2.92 \times 10^{-27}\si{kg}
-\end{equation}
-So therefore the total number of baryons within the horizon, we have:
-\begin{equation}
-    \boxed{N_{\text{bary}} =  V_{\text{hor}}(t_0)\rho_{\text{bary}, 0}/m_{\text{avg}} = 4.83 \times 10^{79} \text{baryons}}
+    \boxed{N_{\text{bary}} =  V_{\text{hor}}(t_0)\rho_{\text{bary}, 0}/m_{p} = 8.45 \times 10^{79} \text{baryons}}
 \end{equation}
 
 \subsection*{Time and Scale Factor for Matter-Only Universe}
