@@ -1,6 +1,76 @@
 \section[Structure Formation: Baryons and Photons]{\hyperlink{toc}{Structure Formation: Baryons and Photons}}
 
-\subsection{}
-\subsection{}
-\subsection{}
+\subsection{Galaxies more luminous than $L$}
+We start with the Schechter luminosity function which gives the number density $\Phi(L)\mathrm d L$ in the range $L \rightarrow L + \mathrm d L$:
+\begin{equation}
+    \Phi(L) \mathrm d L = \Phi^*\left(\frac{L}{L^*}\right)^\alpha\exp(-\frac{L}{L^*})\frac{\mathrm d L}{L^*}
+\end{equation}
+The number density of galaxies more luminous than $L$ is given by integrating from $L$ to $\infty$:
+\begin{equation}
+    n_{\geq L} = \int_L^\infty \Phi(L')\mathrm d L' = \int_L^\infty \Phi^*\left(\frac{L'}{L^*}\right)^\alpha\exp(-\frac{L'}{L^*})\frac{\mathrm d L'}{L^*}
+\end{equation}
+Now substituting $t = \frac{L'}{L^*}$ which gives $\mathrm d t = \frac{\mathrm d L'}{L^*}$ we find:
+\begin{equation}
+    n_{\geq L} = \Phi^* \int_{L/L^*}^\infty t^\alpha e^{-t} \mathrm d t
+\end{equation}
+Furthermore, we can recognize the RHS as an incomplete gamma function, yielding:
+\begin{equation}
+    \boxed{n_{\geq L} = \Phi^* \Gamma(\alpha + 1, \frac{L}{L^*})}
+\end{equation}
+In the limit $L \to 0$, we just have the regular gamma function:
+\begin{equation}
+    n_{\geq 0} = n_{\text{tot}} = \Phi^* \int_0^\infty t^\alpha e^{-t}\mathrm d t = \Phi^*\Gamma(\alpha + 1)
+\end{equation}
+But with $\alpha = -1$, the integral:
+\begin{equation}
+    n_{\text{tot}} =\int_0^\infty \frac{e^{-t}}{t}\mathrm d t = \infty
+\end{equation}
+is seen to diverge (at the lower limit). The physical solution is as follows; in this limit, the number density of galaxies diverges, but the luminosity density remains finite (so the average luminosity per galaxy is zero); this can be realized via the following calculation:
+\begin{equation}
+    \Psi_{\text{tot}} = \int_0^\infty L'\Phi(L')\mathrm d L = \int_0^\infty L'\Phi^*\left(\frac{L'}{L^*}\right)^{-1}\exp(-\frac{L'}{L^*})\frac{\mathrm d L'}{L^*} = 
+    \Phi^*\int_0^\infty \exp(-\frac{L'}{L^*})\mathrm d L' = \Phi^*L^*.
+\end{equation}
+
+\subsection{Total Luminosity Density}
+We again tart with the Schechter luminosity function:
+\begin{equation}
+    \Phi(L) \mathrm d L = \Phi^*\left(\frac{L}{L^*}\right)^\alpha\exp(-\frac{L}{L^*})\frac{\mathrm d L}{L^*}
+\end{equation}
+We can now integrate $L \Phi(L)\mathrm d L$ from $0$ to $\infty$ to obtain the total luminosity density:
+\begin{equation}
+    \Psi = \int_0^\infty \Phi(L') \mathrm d L' = \int_0^\infty L'\Phi^*\left(\frac{L'}{L^*}\right)^{\alpha}\exp(-\frac{L'}{L^*})\frac{\mathrm d L'}{L^*} = \int_0^\infty \Phi^*\left(\frac{L'}{L^*}\right)^{\alpha+1}\exp(-\frac{L'}{L^*})\mathrm d L'
+\end{equation}
+Again making the substitution $t = \frac{L'}{L^*}$ we find:
+\begin{equation}
+    \Psi = \int_0^\infty \Phi^*L^* t^{\alpha+1} e^{-t}\mathrm d t = \Phi^*L^*\int_0^\infty t^{\alpha + 1}e^{-t}\mathrm d t
+\end{equation}
+We recognize the rightmost expression as a gamma function, which yields:
+\begin{equation}
+    \boxed{\Psi = \Phi^*L^*\Gamma(\alpha + 2)}
+\end{equation}
+Now, observing that $\Gamma(-1 + 2) = \Gamma(1) = 1$, so we find for the $V$ band that:
+\begin{equation}
+    \boxed{\Psi_V = \Phi^*L^*_V\Gamma(1) = 1 \times 10^8 \si{L_{\odot, V} Mpc^{-3}}}
+\end{equation}
+
+\subsection{Do structures of $10^{17}M_\odot$ exist today?}
+From Ryden Eq. 12.38, the total amount of mass inside the last scattering surface is given by:
+\begin{equation}
+    M_{\text{tot}} \approx 4.3 \times 10^{23}M_\odot
+\end{equation}
+Dividing this by $M = 10^{17}M_\odot$, we find:
+\begin{equation}
+    N = \frac{M_{\text{tot}}}{M} = 4.3 \times 10^6 \si{regions}
+\end{equation}
+The very first $M = 10^{17}M_\odot$ structure to collapse is the one region out of 4.3 million that had the highest overdensity at the time of radiation-matter equality, with probability:
+\begin{equation}
+    P = \frac{1}{N} = 2.3 \times 10^{-7}.
+\end{equation}
+This is equivalent to a $5.04\sigma$ deviation in a Gaussian distribution. Since $\sigma = \delta M/M = 0.12$, then we can compute the redshift of collapse to be:
+\begin{equation}
+    1 + z_{\text{coll}} = 5.04\sigma = 0.6048
+\end{equation}
+i.e. the first such object has not begin to collapse (as $z_{\text{coll}} < 0$) and hence $\boxed{\text{we do not}}$ expect to see gravitationally collapsed structures with mass $M = 10^{17}M_\odot$ today.
+
+
 \subsection{}
