@@ -182,17 +182,17 @@ The Friedmann equation in this universe reads:
 \begin{equation}
     \frac{H^2}{H_0^2} = \frac{\Omega_{m, 0}}{a^3} + \frac{\Omega_{p, 0}}{a^{3(1+w_p)}} = \frac{\Omega_{m, 0}}{a^3} + \frac{1 - \Omega_{m, 0}}{a^{3(1+w_p)}}
 \end{equation}
-In the limit $a \gg a_{mp}$, the first term becomes negligeble and hence:
+In the limit $a \gg a_{mp}$, the first term becomes negligible and hence:
 \begin{equation}
     \frac{H^2}{H_0^2} \approx \frac{1 - \Omega_{m, 0}}{a^{3(1+w_p)}}
 \end{equation}
 We now rearrange this equation to set up for the integration:
 \begin{equation}
-    \frac{\frac{\dot{a}}{a}}{H_0} \approx \frac{(1 - \Omega_{m, 0})^{1/2}}{a^{3(1+w_p)/2}} \implies H_0 dt \approx a^{3(1+w_p)/2}(1 - \Omega_{m, 0})^{-1/2}da
+    \frac{\frac{\dot{a}}{a}}{H_0} \approx \frac{(1 - \Omega_{m, 0})^{1/2}}{a^{3(1+w_p)/2}} \implies H_0 dt \approx a^{3(1+w_p)/2-1}(1 - \Omega_{m, 0})^{-1/2}da
 \end{equation}
 Integrating from $t_0$ to $t_{rip}$, corresponding to from $ a(t_0) = 1$ to $a(t_{\text{rip}}) = \infty$ on the RHS, we have:
-\begin{equation}
-    \int_{t_0}^{t_{\text{rip}}}H_0 dt  \approx \int_1^\infty a^{3(1+w_p)/2}(1 - \Omega_{m, 0})^{-1/2}da
+\begin{equation}\label{int55}
+    \int_{t_0}^{t_{\text{rip}}}H_0 dt  \approx \int_1^\infty a^{3(1+w_p)/2-1}(1 - \Omega_{m, 0})^{-1/2}da
 \end{equation}
 Carrying out the integral, we get:
 \begin{equation}
@@ -417,7 +417,7 @@ Solving for $\od{a}{\theta}$ by differentiating \eqref{parametric_a} we have:
 \begin{equation}
     \dod{a}{\theta} = \frac{1}{2}\frac{\Omega_0}{\Omega_0 - 1}\sin\theta.
 \end{equation}
-And solving for $\dot{theta}$ by implicitly differentiating \eqref{parametric_t} we have:
+And solving for $\dot{\theta}$ by implicitly differentiating \eqref{parametric_t} we have:
 \begin{equation}
     1 = \frac{1}{2H_0}\frac{\Omega_0}{(\Omega_0 - 1)^{3/2}}(\dot{\theta} - \dot{\theta}\cos\theta) \implies \dot{\theta} = \frac{2H_0(\Omega_0 - 1)^{3/2}}{\Omega_0(1-\cos\theta)}
 \end{equation}

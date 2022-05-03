@@ -73,3 +73,68 @@ This is equivalent to a $5.04\sigma$ deviation in a Gaussian distribution. Since
 i.e. the first such object has not begin to collapse (as $z_{\text{coll}} < 0$) and hence $\boxed{\text{we do not}}$ expect to see gravitationally collapsed structures with mass $M = 10^{17}M_\odot$ today.
 
 \subsection{Ripping Apart Galaxies}
+An object is ripped apart when its energy density $\e_m$ becomes less than the phantom energy density $\e_p$. Hence we can set these two densities to be equal:
+\begin{equation}
+    \e_m = \e_p.
+\end{equation}
+We know that $\e_p \propto a^{-3(1+w_p)}$, and in particular:
+\begin{equation}
+   \e_p = \Omega_{p, 0}\e_c a^{-3(1+w_p)}.
+\end{equation}
+So solving for the rip-apart scale factor $a$ we find:
+\begin{equation}
+    a = \left(\frac{\e_m}{\Omega_p \e_c}\right)^{-1/(3+3w_p)}
+\end{equation}
+and for $w_p = -1.1$ this becomes:
+\begin{equation}
+    a = \left(\frac{\e_m}{\Omega_p \e_c}\right)^{10/3}.
+\end{equation}
+For the milky way galaxy, we have $M_{\text{gal}} = 9.6 \times 10^{11}M_\odot$ and $R_{\text{gal}} = 75\si{kpc}$. Assuming a uniform mass density and using that $\rho_c = 8.7 \times 10^{-27}\si{kg.m^{-3}}$, we find:
+\begin{equation}
+    \frac{\e_\text{gal}}{\e_c} = \frac{\rho_{\text{gal}}}{\rho_c} = \frac{M_{\text{gal}}}{\frac{4}{3}\pi R_{\text{gal}}^3 \rho_c} = 4.2 \times 10^{3}
+\end{equation}
+Therefore the scale factor for which the Milky way galaxy would be ripped apart can be solved to be:
+\begin{equation}
+    \boxed{a_{\text{gal}} = 4.0 \times 10^{12}}
+\end{equation} 
+We can do the same for the sun, with mass $M_\odot$ and radius $R_\odot = 7 \times 10^8 \si{m}$ to find:
+\begin{equation}
+    \frac{\e_{\text{sun}}}{\e_c} = \frac{\rho_{\text{sun}}}{\rho_c} = \frac{M_\odot}{\frac{4}{3}\pi R_\odot^3 \rho_c} = 1.6 \times 10^{29}
+\end{equation}
+so the scale factor for which the sun would be ripped apart would be:
+\begin{equation}
+    \boxed{a_{\text{sun}} = 7.2 \times 10^{97}}
+\end{equation}
+
+From Problem 5.5, we know the time between the present time $t_0$ and the Big rip $t_{\text{rip}}$ was found for $H_0 = 68\si{km.s^{-1}.Mpc^{-1}}$, $w_p = -1.1$ and $\Omega_{m, 0} = 0.3$ to be:
+\begin{equation}
+    t_{\text{rip}} - t_0 = 115.5\si{Gyr}
+\end{equation}
+with $t_0 = 13.8 \si{Gyr}$, we can find $t_{\text{rip}}$ to be:
+\begin{equation}
+    t_{\text{rip}} = 115.5\si{Gyr} - 13.8\si{Gyr} = 101.7\si{Gyr}
+\end{equation}
+Further, we can use the intermediate result from problem 5.5 (Eq. \eqref{int55}) that:
+\begin{equation}
+    \int_{t_0}^{t_{\text{rip}}}H_0 dt  \approx \int_1^\infty a^{3(1+w_p)/2}(1 - \Omega_{m, 0})^{-1/2}\mathrm d a = \frac{1}{\sqrt{\Omega_{p, 0}}}\int_1^\infty a^{3(1+w_p)/2-1}\mathrm d a
+\end{equation}
+Now, we can replace $t_0$ with $t_{\text{gal}}$ (the rip-apart time for the Milky Way Galaxy), and $a(t_0) = 1$ with $a(t_{\text{gal}}) = a_\text{gal}$ in the above equation, and carry out the integral to get:
+\begin{equation}
+    H_0(t_{\text{rip}} - t_{\text{gal}}) = \frac{1}{\sqrt{\Omega_{p, 0}}}\left.\frac{2}{3(1+w_p)}a^{3(1+w_p)/2}\right|_{a_{\text{gal}}}^\infty
+\end{equation}
+The term at infinity vanishes (as the exponent of $a$ is negative), and we therefore find:
+\begin{equation}
+    t_{\text{gal}} = t_{\text{rip}} - \frac{1}{H_0\sqrt{\Omega_{p, 0}}}\frac{2}{3\abs{1 + w_p}}a_{\text{gal}}^{3(1+w_p)/2}
+\end{equation}
+Numerically, this evaluates to:
+\begin{equation}
+    \boxed{t_{\text{gal}} = 101.7\si{Gyr} - 0.46\si{Gyr} = 101.w\si{Gyr}}
+\end{equation}
+So we find that the Milky way will be ripped apart about half a gigayear before the big rip. We can do the same with $t_{\text{sun}}$ and $a(t_\text{sun}) = a_{\text{sun}}$ to find:
+\begin{equation}
+    \boxed{t_{\text{sun}} = 101.7\si{Gyr} - 7.5\times 10^{-14}\si{Gyr} \approx 101.7\si{Gyr}}
+\end{equation}
+In other words, the sun will not be ripped apart until the big rip.
+
+
+
